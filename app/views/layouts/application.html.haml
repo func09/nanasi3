@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %title 王様の耳はロバの耳ッター
+    = stylesheet_link_tag('manage/manage')
+    = yield(:head)
+  %body(class="#{controller_name}-#{action_name}")
+    #container
+      
+      #header
+        %h1 王様の耳はロバの耳ったー
+        #navSection
+          %ul#nav
+            %li= link_to 'ホーム', '/'
+        
+      #main
+        #content-section
+          - flash.each do |name, msg|
+            %div(class="flash #{name}" id="flash_#{name}")
+              %p= msg
+          = yield
+        #side-section
+          = yield(:side)
+      
+      #footer

@@ -1,0 +1,20 @@
+%p
+  ツイッターにつぶやきにくい、でもつぶやきたい！
+  そんな気持ちを入力してください。
+  @ouroba があなたの代わりにつぶやくから、すっきりできるよ！
+/ begin New Message Form
+- form_for @message do |f|
+  %dl
+    %dt= f.label :body
+    %dd= f.text_area :body, :size => '40x5'
+    %dd= f.submit '穴につぶやく'
+/ end New Message Form
+
+/ begin Messages Section
+.messagesSection
+  %h3 これまでの内緒つぶやき
+  %ul
+    - for message in @messages
+      %li
+        = message.body
+/ end Messages Section
