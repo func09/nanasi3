@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :messages
-  map.resources :secrets
-  map.root :controller => 'messages', :action => 'index'
+  map.resources :statuses
+  map.uid_status ':uid', :controller => 'statuses', :action => 'show', :requirements => { :uid => /[0-9a-zA-Z]{6}/ } 
+  map.root :controller => 'statuses', :action => 'index'
 end

@@ -9,16 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100622181102) do
+ActiveRecord::Schema.define(:version => 20100624153657) do
 
-  create_table "messages", :force => true do |t|
-    t.string   "body",                         :null => false
+  create_table "statuses", :force => true do |t|
+    t.string   "uid",                          :null => false
+    t.string   "text",                         :null => false
     t.integer  "tweet_id"
     t.integer  "user_id"
     t.boolean  "anonymous",  :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "statuses", ["uid"], :name => "index_statuses_on_uid", :unique => true
+  add_index "statuses", ["user_id"], :name => "index_statuses_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "twitter_id"

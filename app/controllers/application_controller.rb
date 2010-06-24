@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  helper_method :app_user
+  
+  def app_user
+    @app_user if defined? @app_user
+    @app_user = User.find_by_login(APP_CONFIG[:twitter]['app_user'])
+  end
+  
 end

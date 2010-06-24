@@ -1,0 +1,17 @@
+#status-update-box
+  - form_for(@status) do |f|
+    = f.error_messages
+    %fieldset
+      %div
+        %h3 匿名でつぶやいてみる？
+        %span.count 140
+      %div
+        %p
+          = f.text_area :text, :size => '40x2'
+        %div
+          = f.submit '匿名でツイート'
+
+#status-list-box
+  %ol(id='timeline' class='statuses')
+    - @statuses.each do |status|
+      = render :partial => 'status', :locals => {:status => status}

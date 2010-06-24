@@ -1258,3 +1258,2199 @@ Rendering template within layouts/application
 Rendering secrets/index
   [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
 Completed in 39ms (View: 30, DB: 1) | 200 OK [http://localhost/secrets]
+** TwitterAuth initialized properly.
+** TwitterAuth initialized properly.
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:40:02) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'statuses'):
+  app/controllers/statuses_controller.rb:27:in `new'
+  app/controllers/statuses_controller.rb:27:in `new'
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (34.5ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+** TwitterAuth initialized properly.
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMessages (20100622164941)
+Migrating to TwitterAuthMigration (20100622181102)
+Migrating to CreateStatuses (20100624153657)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "statuses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar(255) NOT NULL, "tweet_id" integer, "user_id" integer, "anonymous" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100624153657')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("statuses")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:40:16) [GET]
+Rendering template within layouts/statuses
+Rendering statuses/new
+
+ActionView::TemplateError (undefined method `text' for #<Status:0x106690490>) on line #8 of app/views/statuses/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :text %><br />
+8:     <%= f.text_area :text %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :tweet_id %><br />
+
+    app/views/statuses/new.html.erb:8
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:231:in `form_for'
+    app/views/statuses/new.html.erb:3
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/statuses_controller.rb:29:in `new'
+    haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (49.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:40:26) [GET]
+  [4;35;1mStatus Load (0.5ms)[0m   [0mSELECT * FROM "statuses" [0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 131ms (View: 118, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:40:29) [GET]
+Rendering template within layouts/statuses
+Rendering statuses/new
+
+ActionView::TemplateError (undefined method `text' for #<Status:0x106645850>) on line #8 of app/views/statuses/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :text %><br />
+8:     <%= f.text_area :text %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :tweet_id %><br />
+
+    app/views/statuses/new.html.erb:8
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:231:in `form_for'
+    app/views/statuses/new.html.erb:3
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/statuses_controller.rb:29:in `new'
+    haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (46.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:41:21) [GET]
+Rendering template within layouts/statuses
+Rendering statuses/new
+
+ActionView::TemplateError (undefined method `anonymouse' for #<Status:0x1061d2d68>) on line #18 of app/views/statuses/new.html.erb:
+15:   </p>
+16:   <p>
+17:     <%= f.label :anonymouse %><br />
+18:     <%= f.check_box :anonymouse %>
+19:   </p>
+20:   <p>
+21:     <%= f.submit 'Create' %>
+
+    app/views/statuses/new.html.erb:18
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:231:in `form_for'
+    app/views/statuses/new.html.erb:3
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/statuses_controller.rb:29:in `new'
+    haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (45.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+** TwitterAuth initialized properly.
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateMessages (20100622164941)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar(255) NOT NULL, "tweet_id" integer, "user_id" integer, "anonymous" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100622164941')[0m
+Migrating to TwitterAuthMigration (20100622181102)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "twitter_id" varchar(255), "login" varchar(255), "access_token" varchar(255), "access_secret" varchar(255), "remember_token" varchar(255), "remember_token_expires_at" datetime, "name" varchar(255), "location" varchar(255), "description" varchar(255), "profile_image_url" varchar(255), "url" varchar(255), "protected" boolean, "profile_background_color" varchar(255), "profile_sidebar_fill_color" varchar(255), "profile_link_color" varchar(255), "profile_sidebar_border_color" varchar(255), "profile_text_color" varchar(255), "profile_background_image_url" varchar(255), "profile_background_tile" boolean, "friends_count" integer, "statuses_count" integer, "followers_count" integer, "favourites_count" integer, "utc_offset" integer, "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100622181102')[0m
+Migrating to CreateStatuses (20100624153657)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "statuses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar(255) NOT NULL, "tweet_id" integer, "user_id" integer, "anonymous" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100624153657')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("statuses")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:42:48) [GET]
+Rendering template within layouts/statuses
+Rendering statuses/new
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://localhost/statuses/new]
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:44:53) [GET]
+Rendering template within layouts/statuses
+Rendering statuses/new
+Completed in 130ms (View: 125, DB: 0) | 200 OK [http://localhost/statuses/new]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:45:01) [GET]
+  [4;36;1mStatus Load (0.4ms)[0m   [0;1mSELECT * FROM "statuses" [0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:45:05) [GET]
+Rendering template within layouts/statuses
+Rendering statuses/new
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/statuses/new]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 00:45:35) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"tweet_id"=>"", "anonymous"=>"1", "text"=>"つぶやきだよ", "user_id"=>""}}
+  [4;35;1mStatus Create (0.3ms)[0m   [0mINSERT INTO "statuses" ("tweet_id", "created_at", "updated_at", "text", "anonymous", "user_id") VALUES(NULL, '2010-06-24 15:45:35', '2010-06-24 15:45:35', 'つぶやきだよ', 't', NULL)[0m
+Redirected to http://localhost:3000/statuses/1
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/statuses]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 00:45:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 1) [0m
+Rendering template within layouts/statuses
+Rendering statuses/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/statuses/1]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:45:37) [GET]
+  [4;35;1mStatus Load (0.5ms)[0m   [0mSELECT * FROM "statuses" [0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:46:21) [GET]
+  [4;36;1mStatus Load (0.6ms)[0m   [0;1mSELECT * FROM "statuses" [0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:46:22) [GET]
+Rendering template within layouts/statuses
+Rendering statuses/new
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x1065d0e88>) on line #1 of app/views/statuses/_form.html.haml:
+1: = f.error_messages
+2: %p
+3:   = f.label :text
+4:   = f.text_area :text
+
+    app/views/statuses/_form.html.haml:1:in `_run_haml_app47views47statuses47_form46html46haml_locals_form_object'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (3.0.11) lib/haml/helpers.rb:90:in `non_haml'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/statuses/new.html.haml:4:in `_run_haml_app47views47statuses47new46html46haml'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:225:in `call'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:225:in `form_for'
+    haml (3.0.11) lib/haml/helpers.rb:588:in `call'
+    haml (3.0.11) lib/haml/helpers.rb:588:in `haml_bind_proc'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:231:in `form_for'
+    app/views/statuses/new.html.haml:3:in `_run_haml_app47views47statuses47new46html46haml'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/statuses_controller.rb:29:in `new'
+    haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (161.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:46:58) [GET]
+Rendering template within layouts/statuses
+Rendering statuses/new
+Rendered statuses/_form (8.0ms)
+Completed in 21ms (View: 16, DB: 0) | 200 OK [http://localhost/statuses/new]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:49:46) [GET]
+  [4;35;1mStatus Load (0.6ms)[0m   [0mSELECT * FROM "statuses" [0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:50:53) [GET]
+  [4;36;1mStatus Load (0.6ms)[0m   [0;1mSELECT * FROM "statuses" [0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:51:15) [GET]
+  [4;35;1mStatus Load (0.6ms)[0m   [0mSELECT * FROM "statuses" [0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 16ms (View: 12, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:51:49) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" [0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:52:17) [GET]
+  [4;35;1mStatus Load (0.6ms)[0m   [0mSELECT * FROM "statuses" [0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 00:52:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 1) [0m
+Rendering template within layouts/statuses
+Rendering statuses/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/statuses/1]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 00:52:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mStatus Load (0.2ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."id" = 1) [0m
+Rendering template within layouts/statuses
+Rendering statuses/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/statuses/1]
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:53:28) [GET]
+Rendering template within layouts/statuses
+Rendering statuses/new
+Rendered statuses/_form (6.1ms)
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/statuses/new]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 00:53:35) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"tweet_id"=>"", "anonymous"=>"1", "text"=>"つぶやくよ！", "user_id"=>""}}
+  [4;36;1mStatus Create (0.3ms)[0m   [0;1mINSERT INTO "statuses" ("tweet_id", "created_at", "updated_at", "text", "anonymous", "user_id") VALUES(NULL, '2010-06-24 15:53:35', '2010-06-24 15:53:35', 'つぶやくよ！', 't', NULL)[0m
+Redirected to http://localhost:3000/statuses/2
+Completed in 114ms (DB: 0) | 302 Found [http://localhost/statuses]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 00:53:35) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mStatus Load (0.3ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."id" = 2) [0m
+Rendering template within layouts/statuses
+Rendering statuses/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/statuses/2]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:53:39) [GET]
+  [4;36;1mStatus Load (0.6ms)[0m   [0;1mSELECT * FROM "statuses" [0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:54:12) [GET]
+  [4;35;1mStatus Load (1.6ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 14ms (View: 7, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:54:33) [GET]
+  [4;36;1mStatus Load (0.7ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:55:01) [GET]
+  [4;35;1mStatus Load (0.7ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 00:55:12) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 2) [0m
+Rendering template within layouts/statuses
+Rendering statuses/show
+Completed in 113ms (View: 3, DB: 0) | 200 OK [http://localhost/statuses/2]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:56:05) [GET]
+  [4;35;1mStatus Load (0.7ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 00:56:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 1) [0m
+Rendering template within layouts/statuses
+Rendering statuses/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/statuses/1]
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:56:09) [GET]
+Rendering template within layouts/statuses
+Rendering statuses/new
+Rendered statuses/_form (6.1ms)
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/statuses/new]
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:56:17) [GET]
+Rendering template within layouts/statuses
+Rendering statuses/new
+Rendered statuses/_form (6.0ms)
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/statuses/new]
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:56:46) [GET]
+Rendering template within layouts/statuses
+Rendering statuses/new
+Rendered statuses/_form (5.5ms)
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/statuses/new]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-25 00:57:08) [GET]
+  [4;35;1mMessage Load (0.1ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 23ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SecretsController#index (for 127.0.0.1 at 2010-06-25 00:57:25) [GET]
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering secrets/index
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/secrets]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:57:31) [GET]
+  [4;35;1mStatus Load (2.0ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/statuses
+Rendering statuses/index
+Completed in 25ms (View: 17, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 00:57:46) [GET]
+  [4;36;1mStatus Load (0.7ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 19ms (View: 14, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 00:58:04) [GET]
+Rendering template within layouts/application
+Rendering statuses/new
+Rendered statuses/_form (4.6ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 18ms (View: 13, DB: 0) | 200 OK [http://localhost/statuses/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-25 00:58:34) [GET]
+Redirected to https://twitter.com/oauth/authenticate?oauth_token=R4VgOccLbj17k8CivInG5SleAMCYJSe3hrmMb3yc&oauth_callback=http%3A%2F%2Flocalhost.com%3A3000%2Foauth_callback
+Completed in 5635ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing SessionsController#oauth_callback (for 127.0.0.1 at 2010-06-25 00:58:40) [GET]
+  Parameters: {"oauth_token"=>"R4VgOccLbj17k8CivInG5SleAMCYJSe3hrmMb3yc", "oauth_verifier"=>"oy7UOt2nPNV0S4C8u0Sw3oQqlZHorFDhbmVV36kJZ7g"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."twitter_id" = '110263229') LIMIT 1[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'dev_func09') LIMIT 1[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."twitter_id" = '110263229') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "profile_sidebar_fill_color", "profile_sidebar_border_color", "profile_background_tile", "location", "profile_image_url", "created_at", "access_secret", "remember_token_expires_at", "profile_link_color", "updated_at", "url", "favourites_count", "utc_offset", "twitter_id", "remember_token", "protected", "profile_text_color", "followers_count", "description", "profile_background_color", "time_zone", "login", "profile_background_image_url", "friends_count", "statuses_count", "access_token") VALUES('開発func09', 'e0ff92', '87bc44', 'f', '', 'http://s.twimg.com/a/1277334364/images/default_profile_6_normal.png', '2010-06-24 15:58:42', 'ZMFtxXofAuhI0Z7djTcK2rBnO0bxwdw4cWBiOLovW0', NULL, '0000ff', '2010-06-24 15:58:42', 'http://localhost:3000/', 0, 32400, '110263229', NULL, 'f', '000000', 2, 'これは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよ', '9ae4e8', 'Tokyo', 'dev_func09', 'http://s.twimg.com/a/1277334364/images/themes/theme1/bg.png', 1, 63, '110263229-mQiXB2T3Z1RjK4WFU6vsEt28ePtK6Myq0Pg4twwy')[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'dev_func09' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."twitter_id" = '110263229' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."remember_token" = '751b2168026f834c3c55' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-24 15:58:42', "remember_token" = '751b2168026f834c3c55', "remember_token_expires_at" = '2010-07-08 15:58:42' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 1785ms (DB: 1) | 302 Found [http://localhost/oauth_callback?oauth_token=R4VgOccLbj17k8CivInG5SleAMCYJSe3hrmMb3yc&oauth_verifier=oy7UOt2nPNV0S4C8u0Sw3oQqlZHorFDhbmVV36kJZ7g]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-25 00:58:42) [GET]
+  [4;35;1mMessage Load (0.1ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-25 01:00:21) [POST]
+  Parameters: {"commit"=>"匿名でつぶやく", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "message"=>{"body"=>"これは非匿名テスト"}}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mMessage Create (0.3ms)[0m   [0;1mINSERT INTO "messages" ("tweet_id", "created_at", "body", "updated_at", "anonymous", "user_id") VALUES(NULL, '2010-06-24 16:00:21', 'これは非匿名テスト', '2010-06-24 16:00:21', 't', NULL)[0m
+Redirected to http://localhost:3000/
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-25 01:00:21) [GET]
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 129ms (View: 121, DB: 1) | 200 OK [http://localhost/]
+** TwitterAuth initialized properly.
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY statuses.id DESC LIMIT 1[0m
+  [4;35;1mStatus Load (0.4ms)[0m   [0mSELECT * FROM "statuses" LIMIT 1[0m
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 01:01:16) [GET]
+Rendering template within layouts/application
+Rendering statuses/new
+Rendered statuses/_form (5.1ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 47ms (View: 41, DB: 1) | 200 OK [http://localhost/statuses/new]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 01:01:26) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"これは非匿名テスト"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mStatus Create (0.4ms)[0m   [0mINSERT INTO "statuses" ("tweet_id", "created_at", "updated_at", "text", "anonymous", "user_id") VALUES(NULL, '2010-06-24 16:01:26', '2010-06-24 16:01:26', 'これは非匿名テスト', 'f', 1)[0m
+Redirected to http://localhost:3000/statuses/3
+Completed in 44ms (DB: 1) | 302 Found [http://localhost/statuses]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:01:26) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 3) [0m
+
+ActionView::MissingTemplate (Missing template statuses/show.erb in view path app/views:vendor/plugins/twitter-auth/app/views):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 01:01:59) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"これは非匿名テスト"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mStatus Create (0.3ms)[0m   [0;1mINSERT INTO "statuses" ("tweet_id", "created_at", "updated_at", "text", "anonymous", "user_id") VALUES(NULL, '2010-06-24 16:01:59', '2010-06-24 16:01:59', 'これは非匿名テスト', 'f', 1)[0m
+Redirected to http://localhost:3000/statuses?notice=Status+was+successfully+created.
+Completed in 58ms (DB: 1) | 302 Found [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:01:59) [GET]
+  Parameters: {"notice"=>"Status was successfully created."}
+  [4;35;1mStatus Load (0.8ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 127ms (View: 15, DB: 1) | 200 OK [http://localhost/statuses?notice=Status+was+successfully+created.]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY statuses.id DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mStatus Load (0.4ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses".user_id = 1) [0m
+** TwitterAuth initialized properly.
+** TwitterAuth initialized properly.
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:04:23) [GET]
+  Parameters: {"notice"=>"Status was successfully created."}
+  [4;35;1mStatus Load (0.9ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/statuses?notice=Status+was+successfully+created.]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:04:40) [GET]
+  Parameters: {"notice"=>"Status was successfully created."}
+  [4;35;1mStatus Load (0.9ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/statuses?notice=Status+was+successfully+created.]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 01:04:41) [GET]
+
+NameError (uninitialized constant MessagesController):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (24.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+** TwitterAuth initialized properly.
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 01:05:30) [GET]
+
+NameError (uninitialized constant MessagesController):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (134.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:05:47) [GET]
+  [4;35;1mStatus Load (0.8ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 26ms (View: 21, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 01:06:08) [GET]
+Rendering template within layouts/application
+Rendering statuses/new
+Rendered statuses/_form (4.6ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://localhost/statuses/new]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:07:50) [GET]
+  [4;36;1mStatus Load (0.8ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 128ms (View: 122, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:07:51) [GET]
+  [4;36;1mStatus Load (0.8ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:07:56) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+
+ActionView::MissingTemplate (Missing template statuses/show.erb in view path app/views:vendor/plugins/twitter-auth/app/views):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:08:19) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mStatus Load (0.2ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:08:40) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mStatus Load (0.3ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:09:18) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mStatus Load (0.2ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 130ms (View: 123, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:09:50) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mStatus Load (0.3ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 24ms (View: 16, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 01:10:21) [GET]
+
+ActionController::RoutingError (No route matches "/about" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:10:24) [GET]
+  [4;35;1mStatus Load (0.8ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:13:01) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mStatus Load (0.2ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+
+ActionView::TemplateError (undefined local variable or method `app_user' for #<ActionView::Base:0x1063244c8>) on line #2 of app/views/statuses/show.html.haml:
+1: %div
+2:   = app_user
+3:   =h @status.text
+4:   = "#{distance_of_time_in_words_to_now(@status.created_at)}前"
+5: %div
+
+    app/views/statuses/show.html.haml:2:in `_run_haml_app47views47statuses47show46html46haml'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (36.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:13:19) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:13:29) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mStatus Load (0.2ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 29ms (View: 23, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:13:42) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 138ms (View: 131, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:13:50) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:13:59) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 27ms (View: 20, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:14:46) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 28ms (View: 22, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:15:16) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 27ms (View: 21, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:15:36) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 27ms (View: 20, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:15:52) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:16:03) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 27ms (View: 20, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:16:16) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mStatus Load (0.2ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 27ms (View: 19, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:18:08) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 26ms (View: 19, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:18:29) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mStatus Load (0.3ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 28ms (View: 20, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:21:46) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 24ms (View: 16, DB: 1) | 200 OK [http://localhost/statuses/4]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 01:21:48) [GET]
+
+ActionController::RoutingError (No route matches "/about" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:22:02) [GET]
+  [4;35;1mStatus Load (0.8ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:23:12) [GET]
+  [4;35;1mStatus Load (0.8ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 33ms (View: 27, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:24:32) [GET]
+  [4;35;1mStatus Load (0.8ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 33ms (View: 27, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:27:28) [GET]
+  [4;35;1mStatus Load (0.8ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+
+ActionView::TemplateError (Illegal element: classes and ids must have values.) on line #6 of app/views/statuses/index.html.haml:
+3: %ol(id='timeline' class='statuses')
+4:   - @statuses.each do |status|
+5:     %li.status(id="status-#{status.id}")
+6:       %span.thumb#{true}
+7:       = image_tag app_user.profile_image_url
+8:       = app_user.login
+9:       =h status.text
+
+    app/views/statuses/index.html.haml:6
+    haml (3.0.11) lib/haml/precompiler.rb:706:in `render_tag'
+    haml (3.0.11) lib/haml/precompiler.rb:214:in `process_line'
+    haml (3.0.11) lib/haml/precompiler.rb:178:in `precompile'
+    haml (3.0.11) lib/haml/engine.rb:121:in `initialize'
+    haml (3.0.11) rails/./lib/haml/template/plugin.rb:29:in `new'
+    haml (3.0.11) rails/./lib/haml/template/plugin.rb:29:in `compile'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (40.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:27:43) [GET]
+  [4;36;1mStatus Load (0.8ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 34ms (View: 28, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:27:52) [GET]
+  [4;36;1mStatus Load (0.8ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 147ms (View: 141, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:29:47) [GET]
+  [4;36;1mStatus Load (0.9ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+
+ActionView::TemplateError (undefined local variable or method `app' for #<ActionView::Base:0x10653cb20>) on line #10 of app/views/statuses/index.html.haml:
+7:         = image_tag app_user.profile_image_url
+8:       %span.status-body
+9:         %span.status-content
+10:           %strong= app.user.login
+11:           %span.entry-content= h status.text
+12:       %span.meta
+13:         = link_to("#{distance_of_time_in_words_to_now(status.created_at)}前", status_path(status))
+
+    app/views/statuses/index.html.haml:10:in `_run_haml_app47views47statuses47index46html46haml'
+    app/views/statuses/index.html.haml:4:in `each'
+    app/views/statuses/index.html.haml:4:in `_run_haml_app47views47statuses47index46html46haml'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (37.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:30:09) [GET]
+  [4;36;1mStatus Load (0.8ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 147ms (View: 30, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:31:08) [GET]
+  [4;36;1mStatus Load (0.7ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/statuses/_status.html.haml:
+1: %li.status(id="status-#{status.id}")
+2:   %span.thumb
+3:     = image_tag app_user.profile_image_url
+4:   %span.status-body
+
+    app/views/statuses/_status.html.haml:1:in `_run_haml_app47views47statuses47_status46html46haml_locals_object_status'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (3.0.11) lib/haml/helpers.rb:90:in `non_haml'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/statuses/index.html.haml:5:in `_run_haml_app47views47statuses47index46html46haml'
+    app/views/statuses/index.html.haml:4:in `each'
+    app/views/statuses/index.html.haml:4:in `_run_haml_app47views47statuses47index46html46haml'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (159.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:31:34) [GET]
+  [4;35;1mStatus Load (0.9ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (17.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (2.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (2.2ms)
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 39ms (View: 33, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#new (for 127.0.0.1 at 2010-06-25 01:34:05) [GET]
+Rendering template within layouts/application
+Rendering statuses/new
+Rendered statuses/_form (4.8ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/statuses/new]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:35:16) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+Rendered statuses/_form (4.8ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (11.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.7ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 39ms (View: 31, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:35:26) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+Rendered statuses/_form (5.0ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (12.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.7ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 40ms (View: 32, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:37:37) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+Rendered statuses/_form (3.7ms)
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (13.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.6ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 40ms (View: 33, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:37:57) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+Rendered statuses/_form (3.7ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (117.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.6ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 143ms (View: 136, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:38:08) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+Rendered statuses/_form (4.1ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (11.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.6ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 40ms (View: 32, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:39:22) [GET]
+  [4;36;1mStatus Load (0.4ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (14.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.5ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 36ms (View: 29, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:39:42) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (123.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.6ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 148ms (View: 140, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:40:03) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (15.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.7ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 39ms (View: 32, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:40:39) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (14.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.5ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 37ms (View: 30, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:40:56) [GET]
+  [4;36;1mStatus Load (0.4ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (14.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (2.5ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 146ms (View: 139, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:43:12) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (14.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.5ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 40ms (View: 33, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:43:21) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (14.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.5ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 38ms (View: 31, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:43:42) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (15.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.7ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 40ms (View: 33, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:44:30) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (14.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.5ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 38ms (View: 31, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:44:33) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (14.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (108.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.9ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 140ms (View: 132, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:44:36) [GET]
+  [4;36;1mStatus Load (0.4ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (14.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.6ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 33ms (View: 25, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:44:50) [GET]
+  [4;36;1mStatus Load (0.5ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (14.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.5ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 38ms (View: 31, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 01:45:24) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"このつぶやきは絶対不可侵さ！"}}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mStatus Create (0.5ms)[0m   [0mINSERT INTO "statuses" ("tweet_id", "created_at", "updated_at", "text", "anonymous", "user_id") VALUES(NULL, '2010-06-24 16:45:24', '2010-06-24 16:45:24', 'このつぶやきは絶対不可侵さ！', 'f', 1)[0m
+Redirected to http://localhost:3000/statuses
+Completed in 20ms (DB: 1) | 302 Found [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:45:24) [GET]
+  [4;36;1mStatus Load (0.7ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (15.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 143ms (View: 29, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 01:45:35) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/statuses/5]
+** TwitterAuth initialized properly.
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to TwitterAuthMigration (20100622181102)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "twitter_id" varchar(255), "login" varchar(255), "access_token" varchar(255), "access_secret" varchar(255), "remember_token" varchar(255), "remember_token_expires_at" datetime, "name" varchar(255), "location" varchar(255), "description" varchar(255), "profile_image_url" varchar(255), "url" varchar(255), "protected" boolean, "profile_background_color" varchar(255), "profile_sidebar_fill_color" varchar(255), "profile_link_color" varchar(255), "profile_sidebar_border_color" varchar(255), "profile_text_color" varchar(255), "profile_background_image_url" varchar(255), "profile_background_tile" boolean, "friends_count" integer, "statuses_count" integer, "followers_count" integer, "favourites_count" integer, "utc_offset" integer, "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100622181102')[0m
+Migrating to CreateStatuses (20100624153657)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "statuses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uid" varchar(255) NOT NULL, "text" varchar(255) NOT NULL, "tweet_id" integer, "user_id" integer, "anonymous" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100624153657')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("statuses")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 01:51:03) [GET]
+  [4;35;1mStatus Load (0.2ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 18ms (View: 11, DB: 0) | 200 OK [http://localhost/statuses]
+** TwitterAuth initialized properly.
+** TwitterAuth initialized properly.
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mStatus Create (0.6ms)[0m   [0mINSERT INTO "statuses" ("tweet_id", "created_at", "updated_at", "text", "anonymous", "uid", "user_id") VALUES(NULL, '2010-06-24 16:56:54', '2010-06-24 16:56:54', 'a', 't', 'aCKx3o', NULL)[0m
+** TwitterAuth initialized properly.
+** TwitterAuth initialized properly.
+** TwitterAuth initialized properly.
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to TwitterAuthMigration (20100622181102)
+Migrating to CreateStatuses (20100624153657)
+Migrating to CreateSlugs (20100624170001)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "slugs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "sluggable_id" integer, "sequence" integer DEFAULT 1 NOT NULL, "sluggable_type" varchar(40), "scope" varchar(255), "created_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("slugs")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_slugs_on_sluggable_id" ON "slugs" ("sluggable_id")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("slugs")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_slugs_on_sluggable_id')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE UNIQUE INDEX "index_slugs_on_n_s_s_and_s" ON "slugs" ("name", "sluggable_type", "sequence", "scope")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100624170001')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("slugs")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_slugs_on_n_s_s_and_s')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_slugs_on_sluggable_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("statuses")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+** TwitterAuth initialized properly.
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:01:41) [GET]
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `profile_image_url' for nil:NilClass) on line #3 of app/views/statuses/_status.html.haml:
+1: %li.status(id="status-#{status.id}")
+2:   %span.thumb
+3:     = image_tag app_user.profile_image_url
+4:   %span.status-body
+5:     %span.status-content
+6:       %strong= app_user.login
+
+    app/views/statuses/_status.html.haml:3:in `_run_haml_app47views47statuses47_status46html46haml_locals_object_status'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (3.0.11) lib/haml/helpers.rb:90:in `non_haml'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/statuses/index.html.haml:16:in `_run_haml_app47views47statuses47index46html46haml'
+    app/views/statuses/index.html.haml:15:in `each'
+    app/views/statuses/index.html.haml:15:in `_run_haml_app47views47statuses47index46html46haml'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (48.2ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-25 02:01:53) [GET]
+Redirected to https://twitter.com/oauth/authenticate?oauth_token=Gc8dT1wF58dBQmLz46xw6v82bZUplTDhQvpcdcVJxY4&oauth_callback=http%3A%2F%2Flocalhost.com%3A3000%2Foauth_callback
+Completed in 1973ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing SessionsController#oauth_callback (for 127.0.0.1 at 2010-06-25 02:01:57) [GET]
+  Parameters: {"oauth_token"=>"Gc8dT1wF58dBQmLz46xw6v82bZUplTDhQvpcdcVJxY4", "oauth_verifier"=>"vGd8aP74Z9SxbrdtjbJxPreWTte1tSJUDX4J74vCk"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."twitter_id" = '110263229') LIMIT 1[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'dev_func09') LIMIT 1[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."twitter_id" = '110263229') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "profile_sidebar_fill_color", "profile_sidebar_border_color", "profile_background_tile", "location", "profile_image_url", "created_at", "access_secret", "remember_token_expires_at", "profile_link_color", "updated_at", "url", "favourites_count", "utc_offset", "twitter_id", "remember_token", "protected", "profile_text_color", "followers_count", "description", "profile_background_color", "time_zone", "login", "profile_background_image_url", "friends_count", "statuses_count", "access_token") VALUES('開発func09', 'e0ff92', '87bc44', 'f', '', 'http://s.twimg.com/a/1277334364/images/default_profile_6_normal.png', '2010-06-24 17:01:59', 'ZMFtxXofAuhI0Z7djTcK2rBnO0bxwdw4cWBiOLovW0', NULL, '0000ff', '2010-06-24 17:01:59', 'http://localhost:3000/', 0, 32400, '110263229', NULL, 'f', '000000', 2, 'これは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよ', '9ae4e8', 'Tokyo', 'dev_func09', 'http://s.twimg.com/a/1277334364/images/themes/theme1/bg.png', 1, 63, '110263229-mQiXB2T3Z1RjK4WFU6vsEt28ePtK6Myq0Pg4twwy')[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'dev_func09' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."twitter_id" = '110263229' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."remember_token" = '6d88e91dd943c035daca' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-24 17:01:59', "remember_token" = '6d88e91dd943c035daca', "remember_token_expires_at" = '2010-07-08 17:01:59' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 2431ms (DB: 2) | 302 Found [http://localhost/oauth_callback?oauth_token=Gc8dT1wF58dBQmLz46xw6v82bZUplTDhQvpcdcVJxY4&oauth_verifier=vGd8aP74Z9SxbrdtjbJxPreWTte1tSJUDX4J74vCk]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:01:59) [GET]
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (15.2ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 31ms (View: 24, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 02:02:09) [GET]
+  Parameters: {"id"=>"aCKx3o"}
+  [4;36;1mStatus Load (0.7ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."uid" = 'aCKx3o') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 29ms (View: 22, DB: 2) | 200 OK [http://localhost/statuses/aCKx3o]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:02:15) [GET]
+  [4;35;1mStatus Load (0.3ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (15.0ms)
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 28ms (View: 20, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:02:21) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"こんにちは！"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template statuses/new.erb in view path app/views:vendor/plugins/twitter-auth/app/views):
+  app/controllers/statuses_controller.rb:30:in `create'
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:03:19) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"こんにちは！"}}
+  [4;36;1mStatus Load (0.4ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (9.6ms)
+Completed in 32ms (View: 13, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:03:21) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"こんにちは！"}}
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (9.1ms)
+Completed in 28ms (View: 12, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:03:24) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"こんにちは！"}}
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (9.0ms)
+Completed in 28ms (View: 11, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:03:51) [GET]
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (121.0ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 134ms (View: 126, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:03:53) [GET]
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (14.8ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 28ms (View: 20, DB: 1) | 200 OK [http://localhost/]
+** TwitterAuth initialized properly.
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to TwitterAuthMigration (20100622181102)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "twitter_id" varchar(255), "login" varchar(255), "access_token" varchar(255), "access_secret" varchar(255), "remember_token" varchar(255), "remember_token_expires_at" datetime, "name" varchar(255), "location" varchar(255), "description" varchar(255), "profile_image_url" varchar(255), "url" varchar(255), "protected" boolean, "profile_background_color" varchar(255), "profile_sidebar_fill_color" varchar(255), "profile_link_color" varchar(255), "profile_sidebar_border_color" varchar(255), "profile_text_color" varchar(255), "profile_background_image_url" varchar(255), "profile_background_tile" boolean, "friends_count" integer, "statuses_count" integer, "followers_count" integer, "favourites_count" integer, "utc_offset" integer, "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100622181102')[0m
+Migrating to CreateStatuses (20100624153657)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "statuses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uid" varchar(255) NOT NULL, "text" varchar(255) NOT NULL, "tweet_id" integer, "user_id" integer, "anonymous" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("statuses")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE UNIQUE INDEX "index_statuses_on_uid" ON "statuses" ("uid")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("statuses")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_statuses_on_uid')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_statuses_on_user_id" ON "statuses" ("user_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100624153657')[0m
+Migrating to CreateSlugs (20100624170001)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "slugs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "sluggable_id" integer, "sequence" integer DEFAULT 1 NOT NULL, "sluggable_type" varchar(40), "scope" varchar(255), "created_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("slugs")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_slugs_on_sluggable_id" ON "slugs" ("sluggable_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("slugs")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_slugs_on_sluggable_id')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE UNIQUE INDEX "index_slugs_on_n_s_s_and_s" ON "slugs" ("name", "sluggable_type", "sequence", "scope")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100624170001')[0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("slugs")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_slugs_on_n_s_s_and_s')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_slugs_on_sluggable_id')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("statuses")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_statuses_on_user_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_statuses_on_uid')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-25 02:05:15) [GET]
+Redirected to https://twitter.com/oauth/authenticate?oauth_token=tfTmXDWqlNMOA9YlGbnb7VayLJKOA9BaVaQ3KZYRVyE&oauth_callback=http%3A%2F%2Flocalhost.com%3A3000%2Foauth_callback
+Completed in 1120ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing SessionsController#oauth_callback (for 127.0.0.1 at 2010-06-25 02:05:17) [GET]
+  Parameters: {"oauth_token"=>"tfTmXDWqlNMOA9YlGbnb7VayLJKOA9BaVaQ3KZYRVyE", "oauth_verifier"=>"2V21XnxHpRkKWWB7LZgsHpq8aKDRwGzk1Tuk9rHaOds"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."twitter_id" = '110263229') LIMIT 1[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'dev_func09') LIMIT 1[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."twitter_id" = '110263229') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "profile_sidebar_fill_color", "profile_sidebar_border_color", "profile_background_tile", "location", "profile_image_url", "created_at", "access_secret", "remember_token_expires_at", "profile_link_color", "updated_at", "url", "favourites_count", "utc_offset", "twitter_id", "remember_token", "protected", "profile_text_color", "followers_count", "description", "profile_background_color", "time_zone", "login", "profile_background_image_url", "friends_count", "statuses_count", "access_token") VALUES('開発func09', 'e0ff92', '87bc44', 'f', '', 'http://s.twimg.com/a/1277334364/images/default_profile_6_normal.png', '2010-06-24 17:05:18', 'ZMFtxXofAuhI0Z7djTcK2rBnO0bxwdw4cWBiOLovW0', NULL, '0000ff', '2010-06-24 17:05:18', 'http://localhost:3000/', 0, 32400, '110263229', NULL, 'f', '000000', 2, 'これは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよ', '9ae4e8', 'Tokyo', 'dev_func09', 'http://s.twimg.com/a/1277334364/images/themes/theme1/bg.png', 1, 63, '110263229-mQiXB2T3Z1RjK4WFU6vsEt28ePtK6Myq0Pg4twwy')[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'dev_func09' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."twitter_id" = '110263229' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."remember_token" = 'eb118339ddf7a22ad615' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-24 17:05:18', "remember_token" = 'eb118339ddf7a22ad615', "remember_token_expires_at" = '2010-07-08 17:05:18' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 1520ms (DB: 1) | 302 Found [http://localhost/oauth_callback?oauth_token=tfTmXDWqlNMOA9YlGbnb7VayLJKOA9BaVaQ3KZYRVyE&oauth_verifier=2V21XnxHpRkKWWB7LZgsHpq8aKDRwGzk1Tuk9rHaOds]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:05:18) [GET]
+  [4;36;1mStatus Load (0.1ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (107.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 124ms (View: 11, DB: 107) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:05:25) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"あいうえお"}}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+Completed in 21ms (View: 3, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:05:49) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"あいうえお"}}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+Completed in 47ms (View: 18, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:06:24) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"あいうえお"}}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+Completed in 26ms (View: 9, DB: 1) | 200 OK [http://localhost/statuses]
+** TwitterAuth initialized properly.
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:09:29) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"あいうえお"}}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+Completed in 45ms (View: 23, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:09:57) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"あいうえお"}}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+Completed in 25ms (View: 8, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:10:27) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"あいうえお"}}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+Completed in 25ms (View: 8, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:11:07) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"あいうえお"}}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+Completed in 26ms (View: 9, DB: 2) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:11:21) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"あいうえお"}}
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+set_uid
+  [4;36;1mStatus Create (0.5ms)[0m   [0;1mINSERT INTO "statuses" ("tweet_id", "created_at", "updated_at", "text", "anonymous", "uid", "user_id") VALUES(NULL, '2010-06-24 17:11:21', '2010-06-24 17:11:21', 'あいうえお', 'f', 'CqtuS6', 1)[0m
+Redirected to http://localhost:3000/statuses
+Completed in 21ms (DB: 1) | 302 Found [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:11:21) [GET]
+  [4;35;1mStatus Load (0.3ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (22.0ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 37ms (View: 30, DB: 2) | 200 OK [http://localhost/statuses]
+** TwitterAuth initialized properly.
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to TwitterAuthMigration (20100622181102)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "twitter_id" varchar(255), "login" varchar(255), "access_token" varchar(255), "access_secret" varchar(255), "remember_token" varchar(255), "remember_token_expires_at" datetime, "name" varchar(255), "location" varchar(255), "description" varchar(255), "profile_image_url" varchar(255), "url" varchar(255), "protected" boolean, "profile_background_color" varchar(255), "profile_sidebar_fill_color" varchar(255), "profile_link_color" varchar(255), "profile_sidebar_border_color" varchar(255), "profile_text_color" varchar(255), "profile_background_image_url" varchar(255), "profile_background_tile" boolean, "friends_count" integer, "statuses_count" integer, "followers_count" integer, "favourites_count" integer, "utc_offset" integer, "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100622181102')[0m
+Migrating to CreateStatuses (20100624153657)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "statuses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uid" varchar(255) NOT NULL, "text" varchar(255) NOT NULL, "tweet_id" integer, "user_id" integer, "anonymous" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("statuses")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE UNIQUE INDEX "index_statuses_on_uid" ON "statuses" ("uid")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("statuses")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_statuses_on_uid')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_statuses_on_user_id" ON "statuses" ("user_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100624153657')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("statuses")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_statuses_on_user_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_statuses_on_uid')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-25 02:13:34) [GET]
+Redirected to https://twitter.com/oauth/authenticate?oauth_token=o6ZShcL1nwBYKwDDIsffLNAX9aYhzdFIfxqzIZe3Nfg&oauth_callback=http%3A%2F%2Flocalhost.com%3A3000%2Foauth_callback
+Completed in 5419ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing SessionsController#oauth_callback (for 127.0.0.1 at 2010-06-25 02:13:43) [GET]
+  Parameters: {"oauth_token"=>"o6ZShcL1nwBYKwDDIsffLNAX9aYhzdFIfxqzIZe3Nfg", "oauth_verifier"=>"eWNTroW3mAvxMHrI4FFazQWaOT1ynzJA277jcuck8"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."twitter_id" = '110263229') LIMIT 1[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'dev_func09') LIMIT 1[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."twitter_id" = '110263229') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "profile_sidebar_fill_color", "profile_sidebar_border_color", "profile_background_tile", "location", "profile_image_url", "created_at", "access_secret", "remember_token_expires_at", "profile_link_color", "updated_at", "url", "favourites_count", "utc_offset", "twitter_id", "remember_token", "protected", "profile_text_color", "followers_count", "description", "profile_background_color", "time_zone", "login", "profile_background_image_url", "friends_count", "statuses_count", "access_token") VALUES('開発func09', 'e0ff92', '87bc44', 'f', '', 'http://s.twimg.com/a/1277334364/images/default_profile_6_normal.png', '2010-06-24 17:13:52', 'ZMFtxXofAuhI0Z7djTcK2rBnO0bxwdw4cWBiOLovW0', NULL, '0000ff', '2010-06-24 17:13:52', 'http://localhost:3000/', 0, 32400, '110263229', NULL, 'f', '000000', 2, 'これは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよ', '9ae4e8', 'Tokyo', 'dev_func09', 'http://s.twimg.com/a/1277334364/images/themes/theme1/bg.png', 1, 63, '110263229-mQiXB2T3Z1RjK4WFU6vsEt28ePtK6Myq0Pg4twwy')[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'dev_func09' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."twitter_id" = '110263229' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."remember_token" = '9612e36032d001bb44bf' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-24 17:13:52', "remember_token" = '9612e36032d001bb44bf', "remember_token_expires_at" = '2010-07-08 17:13:52' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 9079ms (DB: 2) | 302 Found [http://localhost/oauth_callback?oauth_token=o6ZShcL1nwBYKwDDIsffLNAX9aYhzdFIfxqzIZe3Nfg&oauth_verifier=eWNTroW3mAvxMHrI4FFazQWaOT1ynzJA277jcuck8]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:13:52) [GET]
+  [4;35;1mStatus Load (0.1ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:14:00) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"いえす"}}
+  [4;35;1mStatus Load (0.2ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+Completed in 24ms (View: 8, DB: 1) | 200 OK [http://localhost/statuses]
+** TwitterAuth initialized properly.
+set_uid
+set_uid
+  [4;36;1mStatus Create (0.7ms)[0m   [0;1mINSERT INTO "statuses" ("tweet_id", "created_at", "updated_at", "text", "anonymous", "uid", "user_id") VALUES(NULL, '2010-06-24 17:15:28', '2010-06-24 17:15:28', 'a', 't', 'VK0wH7', NULL)[0m
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:15:47) [GET]
+  [4;35;1mStatus Load (0.3ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (15.0ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 138ms (View: 21, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 02:15:51) [GET]
+  Parameters: {"id"=>"VK0wH7"}
+  [4;35;1mStatus Load (0.7ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."uid" = 'VK0wH7') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 28ms (View: 21, DB: 2) | 200 OK [http://localhost/statuses/VK0wH7]
+** TwitterAuth initialized properly.
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:16:51) [GET]
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (22.1ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 58ms (View: 50, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:16:56) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"a"}}
+  [4;36;1mStatus Load (0.4ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (6.3ms)
+Completed in 33ms (View: 14, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:17:48) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"a"}}
+  [4;36;1mStatus Load (0.4ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (6.3ms)
+Completed in 31ms (View: 14, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:17:50) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"a"}}
+  [4;36;1mStatus Load (0.4ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (6.1ms)
+Completed in 31ms (View: 14, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 02:18:32) [GET]
+  Parameters: {"id"=>"VK0wH7"}
+  [4;36;1mStatus Load (0.2ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Status with ID=VK0wH7):
+  app/controllers/statuses_controller.rb:10:in `show'
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (117.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:18:35) [GET]
+  [4;35;1mStatus Load (0.3ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (14.4ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 27ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:18:43) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"あいうえお"}}
+  [4;35;1mStatus Load (0.3ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+set_uid
+  [4;35;1mStatus Create (0.4ms)[0m   [0mINSERT INTO "statuses" ("tweet_id", "created_at", "updated_at", "text", "anonymous", "uid", "user_id") VALUES(NULL, '2010-06-24 17:18:43', '2010-06-24 17:18:43', 'あいうえお', 'f', 'Urea2X', 1)[0m
+Redirected to http://localhost:3000/statuses
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:18:43) [GET]
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (15.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (2.2ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 30ms (View: 23, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 02:18:48) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/statuses/2]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 02:21:01) [GET]
+  Parameters: {"id"=>"2sssss"}
+  [4;35;1mStatus Load (0.3ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 24ms (View: 16, DB: 2) | 200 OK [http://localhost/statuses/2sssss]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 02:21:08) [GET]
+  Parameters: {"uid"=>"2sssss"}
+
+ActiveRecord::RecordNotFound (Couldn't find Status without an ID):
+  app/controllers/statuses_controller.rb:10:in `show'
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (121.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:21:37) [GET]
+  [4;36;1mStatus Load (0.4ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (15.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (2.1ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 31ms (View: 23, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:21:56) [GET]
+  [4;36;1mStatus Load (0.4ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (16.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (2.0ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 36ms (View: 28, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 02:22:04) [GET]
+  Parameters: {"uid"=>"Urea2X"}
+
+ActiveRecord::RecordNotFound (Couldn't find Status without an ID):
+  app/controllers/statuses_controller.rb:10:in `show'
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (114.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 02:22:29) [GET]
+  Parameters: {"uid"=>"Urea2X"}
+  [4;36;1mStatus Load (0.3ms)[0m   [0;1mSELECT * FROM "statuses" WHERE ("statuses"."uid" = 'Urea2X') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/Urea2X]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:22:33) [GET]
+  [4;35;1mStatus Load (0.3ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (14.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.8ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 02:22:35) [GET]
+  Parameters: {"uid"=>"VK0wH7"}
+  [4;35;1mStatus Load (0.3ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."uid" = 'VK0wH7') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://localhost/VK0wH7]
+
+
+Processing StatusesController#create (for 127.0.0.1 at 2010-06-25 02:22:44) [POST]
+  Parameters: {"commit"=>"匿名でツイート", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "status"=>{"text"=>"あああいいううええおお"}}
+  [4;36;1mStatus Load (0.4ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+set_uid
+  [4;36;1mStatus Create (0.5ms)[0m   [0;1mINSERT INTO "statuses" ("tweet_id", "created_at", "updated_at", "text", "anonymous", "uid", "user_id") VALUES(NULL, '2010-06-24 17:22:45', '2010-06-24 17:22:45', 'あああいいううええおお', 'f', 'BGwz8s', 1)[0m
+Redirected to http://localhost:3000/statuses
+Completed in 102ms (DB: 1) | 302 Found [http://localhost/statuses]
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:22:45) [GET]
+  [4;35;1mStatus Load (0.4ms)[0m   [0mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (15.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (2.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (5.0ms)
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 36ms (View: 29, DB: 1) | 200 OK [http://localhost/statuses]
+
+
+Processing StatusesController#show (for 127.0.0.1 at 2010-06-25 02:22:53) [GET]
+  Parameters: {"uid"=>"BGwz8s"}
+  [4;35;1mStatus Load (0.3ms)[0m   [0mSELECT * FROM "statuses" WHERE ("statuses"."uid" = 'BGwz8s') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering statuses/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/BGwz8s]
+** TwitterAuth initialized properly.
+
+
+Processing StatusesController#index (for 127.0.0.1 at 2010-06-25 02:23:34) [GET]
+  [4;36;1mStatus Load (0.4ms)[0m   [0;1mSELECT * FROM "statuses" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering statuses/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (21.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (2.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+Rendered statuses/_status (1.7ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 60ms (View: 52, DB: 2) | 200 OK [http://localhost/]

@@ -9,15 +9,3 @@ one: {}
 #
 two: {}
 #  column: value
-
-# == Schema Information
-#
-# Table name: messages
-#
-#  id         :integer         not null, primary key
-#  body       :string(255)     not null
-#  tweet_id   :integer
-#  created_at :datetime
-#  updated_at :datetime
-#
-

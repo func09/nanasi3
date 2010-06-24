@@ -12,8 +12,6 @@
         #navSection
           %ul#nav
             %li= link_to 'ホーム', '/'
-            %li= link_to 'アバウト', '/'
-            %li= link_to 'つぶやき', secrets_path
             - if logged_in?
               %li= link_to 'ログアウト', logout_path
             - else
@@ -29,3 +27,4 @@
           = yield(:side)
       
       #footer
+        &copy;2010 func09 <a href='/about'>このサービスについて</a>

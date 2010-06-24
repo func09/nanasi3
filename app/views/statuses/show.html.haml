@@ -1,0 +1,12 @@
+.entry-content
+  .status-content
+    .text-content
+      =h @status.text
+    .meta
+      = @status.created_at
+  .user-info
+    = image_tag app_user.profile_image_url
+    = app_user.login
+    = app_user.name
+%div
+  %h3 このつぶやきに対する反応
