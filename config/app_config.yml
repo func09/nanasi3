@@ -1,6 +1,6 @@
 development:
   domain: localhost:3000
-  sitename: つぶやき＠名無し
+  sitename: つぶやき＠名無し（開発）
   twitter:
     app_user: dev_func09
     hashtag: '#nanasi'
@@ -8,4 +8,8 @@ test:
   domain: test.host
 
 production:
-  domain: example.com
+  domain: nanasi3.com
+  sitename: つぶやき＠名無し
+  twitter:
+    app_user: nanasi_3
+    hashtag: '#nanasi'
