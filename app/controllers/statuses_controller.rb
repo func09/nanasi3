@@ -7,8 +7,7 @@ class StatusesController < ApplicationController
 
   # GET /statuses/1
   def show
-    #@status = Status.find(params[:id])
-    @status = Status.find_by_uid(params[:uid])
+    @status = Status.find_by_uuid(params[:uuid])
   end
 
   # POST /statuses

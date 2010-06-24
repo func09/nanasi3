@@ -1,6 +1,8 @@
 #status-update-box
   - form_for(@status) do |f|
-    = f.error_messages
+    = f.hidden_field :uuid
+    = f.hidden_field :tweet_extention
+    =# f.error_messages
     %fieldset
       %div
         %h3 匿名でつぶやいてみる？
@@ -15,3 +17,4 @@
   %ol(id='timeline' class='statuses')
     - @statuses.each do |status|
       = render :partial => 'status', :locals => {:status => status}
+  

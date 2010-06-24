@@ -6,4 +6,4 @@
       %strong= app_user.login
       %span.entry-content= h status.text
   %span.meta
-    = link_to("#{distance_of_time_in_words_to_now(status.created_at)}前", uid_status_path(status.uid))
+    = link_to("#{distance_of_time_in_words_to_now(status.created_at)}前", uuid_status_path(status.uuid))

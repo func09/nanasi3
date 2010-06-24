@@ -12,7 +12,7 @@
 ActiveRecord::Schema.define(:version => 20100624153657) do
 
   create_table "statuses", :force => true do |t|
-    t.string   "uid",                          :null => false
+    t.string   "uuid",                         :null => false
     t.string   "text",                         :null => false
     t.integer  "tweet_id"
     t.integer  "user_id"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(:version => 20100624153657) do
     t.datetime "updated_at"
   end
 
-  add_index "statuses", ["uid"], :name => "index_statuses_on_uid", :unique => true
   add_index "statuses", ["user_id"], :name => "index_statuses_on_user_id"
+  add_index "statuses", ["uuid"], :name => "index_statuses_on_uuid", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "twitter_id"

@@ -2,6 +2,7 @@ development:
   domain: localhost:3000
   twitter:
     app_user: dev_func09
+    hashtag: '#nanasi'
 test:
   domain: test.host
 

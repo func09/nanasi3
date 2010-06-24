@@ -1,17 +1,23 @@
 class Status < ActiveRecord::Base
   belongs_to :user
-  before_create :init_uid, :tweet
+  before_create :tweet
+  validates_uniqueness_of :uuid
+  attr_accessor :tweet_extention
+  
+  default_value_for :uuid do
+    Forgery::Basic.text :at_least => 6, :at_most => 6
+  end
+  
+  default_value_for :tweet_extention do |x|
+    " http://#{APP_CONFIG[:domain]}/#{x.uuid} #{APP_CONFIG[:twitter]['hashtag']}"
+  end
   
   private
     
-    def init_uid
-      logger.info 'set_uid'
-      self.uid = Forgery::Basic.text :at_least => 6, :at_most => 6 unless self.uid
-    end
-    
     # 保存時にツイッターにつぶやきます
     def tweet
-      res = User.app_user.twitter.post('/statuses/update.json', 'status' => self.text) 
+      message = self.text + self.tweet_extention
+      res = User.app_user.twitter.post('/statuses/update.json', 'status' => message) 
       self.tweet_id = res['id']
     end
 end
