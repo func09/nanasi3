@@ -1,8 +1,8 @@
+- title "#{APP_CONFIG[:sitename]} - ホーム"
 #status-update-box
   - form_for(@status) do |f|
     = f.hidden_field :uuid
     = f.hidden_field :tweet_extention
-    =# f.error_messages
     %fieldset
       %div
         %h3 匿名でつぶやいてみる？

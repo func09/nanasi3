@@ -1,5 +1,6 @@
 development:
   domain: localhost:3000
+  sitename: つぶやき＠名無し
   twitter:
     app_user: dev_func09
     hashtag: '#nanasi'

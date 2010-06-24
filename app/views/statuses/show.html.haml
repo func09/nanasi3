@@ -1,5 +1,28 @@
+- title "#{APP_CONFIG[:sitename]} - #{truncate(@status.text)}"
+- content_for :head do
+  %script(type="text/javascript" src="http://cdn.topsy.com/topsy.js?init=topsyWidgetCreator")
+  %script(type="text/javascript" src="http://twitter-trackbacks-widget.googlecode.com/files/jquery.twittertrackbacks-1.0.min.js")
+  :javascript
+    
+    // http://www.moretechtips.net/2009/10/twitter-friends-followers-widget-jquery.html
+    var topsy_url = "#{uuid_status_url(@status.uuid)}";
+    var topsy_theme = "blue";
+    var topsy_style = "big";
+    //var topsy_nick = "YourTwitterName";
+    
+    $(document).ready(function(){
+       $('div.trackbacks').twitterTrackbacks({
+          url: topsy_url
+          ,n:8
+          ,show_n:0
+          ,inf_tip:1
+       });
+    });
+    
 .entry-content
   .status-content
+    .topsy
+      %script(type="text/javascript" src="http://cdn.topsy.com/button.js")
     .text-content
       =h @status.text
     .meta
@@ -10,3 +33,5 @@
     = app_user.name
 %div
   %h3 このつぶやきに対する反応
+  .trackbacks
+    loading..

@@ -1,14 +1,14 @@
 !!!
 %html
   %head
-    %title 名無しさんのつぶやき
+    %title= yield(:title) || "つぶやき＠名無し"
     = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
     = yield(:head)
   %body(class="#{controller_name}-#{action_name}")
     #container
       
       #header
-        %h1 名無しさんのつぶやき
+        %h1 つぶやき＠名無し
         #navSection
           %ul#nav
             %li= link_to 'ホーム', '/'
