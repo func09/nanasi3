@@ -1,17 +1,23 @@
 !!!
 %html
   %head
-    %title 王様の耳はロバの耳ッター
-    = stylesheet_link_tag('manage/manage')
+    %title 名無しさんのつぶやき
+    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
     = yield(:head)
   %body(class="#{controller_name}-#{action_name}")
     #container
       
       #header
-        %h1 王様の耳はロバの耳ったー
+        %h1 名無しさんのつぶやき
         #navSection
           %ul#nav
             %li= link_to 'ホーム', '/'
+            %li= link_to 'アバウト', '/'
+            %li= link_to 'つぶやき', secrets_path
+            - if logged_in?
+              %li= link_to 'ログアウト', logout_path
+            - else
+              %li= link_to 'ログイン', login_path
         
       #main
         #content-section

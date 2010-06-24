@@ -1,0 +1,9 @@
+development:
+  domain: localhost:3000
+  twitter:
+    app_user: dev_func09
+test:
+  domain: test.host
+
+production:
+  domain: example.com

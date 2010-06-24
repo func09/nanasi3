@@ -3,6 +3,8 @@ class CreateMessages < ActiveRecord::Migration
     create_table :messages do |t|
       t.string :body, :null => false
       t.integer :tweet_id
+      t.integer :user_id
+      t.boolean :anonymous, :default => true
       t.timestamps
     end
   end

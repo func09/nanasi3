@@ -393,3 +393,868 @@ ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css
   haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
 
 Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-23 02:24:54) [POST]
+  Parameters: {"commit"=>"穴につぶやく", "authenticity_token"=>"sS7kZUKCrrB41yXEOVcPFbliW7HGq6oCEVLI+o03az4=", "message"=>{"body"=>"これは秘密！"}}
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO "messages" ("tweet_id", "created_at", "body", "updated_at") VALUES(NULL, '2010-06-22 17:24:54', 'これは秘密！', '2010-06-22 17:24:54')[0m
+Redirected to http://localhost:3000/
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:24:54) [GET]
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:24:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:25:52) [GET]
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 46ms (View: 41, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:25:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:25:59) [GET]
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+
+ActionView::TemplateError (undefined local variable or method `ago' for #<ActionView::Base:0x1037791e8>) on line #20 of app/views/messages/index.html.haml:
+17:     - for message in @messages
+18:       %li
+19:         =h message.body
+20:         = distance_of_time_in_words_to_now message.created_at ago
+21: / end Messages Section
+
+    app/views/messages/index.html.haml:20:in `_run_haml_app47views47messages47index46html46haml'
+    app/views/messages/index.html.haml:17:in `each'
+    app/views/messages/index.html.haml:17:in `_run_haml_app47views47messages47index46html46haml'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (40.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:26:16) [GET]
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:26:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:26:22) [GET]
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:26:22) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:27:00) [GET]
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::RT) on line #21 of app/views/messages/index.html.haml:
+18:       %li
+19:         =h message.body
+20:         = "#{distance_of_time_in_words_to_now message.created_at} ago"
+21:         = [RT]
+22: / end Messages Section
+
+    app/views/messages/index.html.haml:21:in `_run_haml_app47views47messages47index46html46haml'
+    app/views/messages/index.html.haml:17:in `each'
+    app/views/messages/index.html.haml:17:in `_run_haml_app47views47messages47index46html46haml'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (40.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:27:09) [GET]
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 108ms (View: 103, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:27:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-23 02:27:27) [POST]
+  Parameters: {"commit"=>"穴につぶやく", "authenticity_token"=>"sS7kZUKCrrB41yXEOVcPFbliW7HGq6oCEVLI+o03az4=", "message"=>{"body"=>"あわわわわ"}}
+  [4;35;1mMessage Create (0.3ms)[0m   [0mINSERT INTO "messages" ("tweet_id", "created_at", "body", "updated_at") VALUES(NULL, '2010-06-22 17:27:27', 'あわわわわ', '2010-06-22 17:27:27')[0m
+Redirected to http://localhost:3000/
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:27:27) [GET]
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:27:27) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-23 02:28:13) [POST]
+  Parameters: {"commit"=>"穴につぶやく", "authenticity_token"=>"sS7kZUKCrrB41yXEOVcPFbliW7HGq6oCEVLI+o03az4=", "message"=>{"body"=>"あああ"}}
+  [4;35;1mMessage Create (0.5ms)[0m   [0mINSERT INTO "messages" ("tweet_id", "created_at", "body", "updated_at") VALUES(NULL, '2010-06-22 17:28:13', 'あああ', '2010-06-22 17:28:13')[0m
+Redirected to http://localhost:3000/
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:28:13) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:28:13) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:28:41) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:28:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-23 02:28:44) [POST]
+  Parameters: {"commit"=>"穴につぶやく", "authenticity_token"=>"sS7kZUKCrrB41yXEOVcPFbliW7HGq6oCEVLI+o03az4=", "message"=>{"body"=>""}}
+Rendering template within layouts/application
+Rendering messages/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #17 of app/views/messages/index.html.haml:
+14: .messagesSection
+15:   %h3 これまでの内緒つぶやき
+16:   %ul
+17:     - for message in @messages
+18:       %li
+19:         =h message.body
+20:         = "#{distance_of_time_in_words_to_now message.created_at} ago"
+
+    app/views/messages/index.html.haml:17:in `_run_haml_app47views47messages47index46html46haml'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.11) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/messages_controller.rb:15:in `create'
+    haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (37.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:28:56) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:28:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:29:41) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:29:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:30:05) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:30:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:30:25) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 22ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:30:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:30:52) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 18ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:30:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:31:20) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:31:20) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-23 02:31:24) [POST]
+  Parameters: {"commit"=>"穴につぶやく", "authenticity_token"=>"sS7kZUKCrrB41yXEOVcPFbliW7HGq6oCEVLI+o03az4=", "message"=>{"body"=>""}}
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/messages]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:31:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-23 02:32:07) [POST]
+  Parameters: {"commit"=>"穴につぶやく", "authenticity_token"=>"sS7kZUKCrrB41yXEOVcPFbliW7HGq6oCEVLI+o03az4=", "message"=>{"body"=>""}}
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/messages]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:32:07) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:32:23) [GET]
+  [4;36;1mMessage Load (1.2ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:32:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:46:44) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 688ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:46:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-23 02:46:47) [POST]
+  Parameters: {"commit"=>"穴につぶやく", "authenticity_token"=>"sS7kZUKCrrB41yXEOVcPFbliW7HGq6oCEVLI+o03az4=", "message"=>{"body"=>""}}
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 19ms (View: 9, DB: 0) | 200 OK [http://localhost/messages]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:46:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-23 02:47:12) [POST]
+  Parameters: {"commit"=>"穴につぶやく", "authenticity_token"=>"sS7kZUKCrrB41yXEOVcPFbliW7HGq6oCEVLI+o03az4=", "message"=>{"body"=>""}}
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 38ms (View: 27, DB: 0) | 200 OK [http://localhost/messages]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:47:12) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 02:55:54) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 29ms (View: 19, DB: 0) | 200 OK [http://localhost/messages]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:55:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SecretsController#index (for 127.0.0.1 at 2010-06-23 02:55:56) [GET]
+
+NameError (uninitialized constant SecretsController::Messages):
+  app/controllers/secrets_controller.rb:5:in `index'
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (30.7ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SecretsController#index (for 127.0.0.1 at 2010-06-23 02:56:09) [GET]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `paginate' for #<Class:0x101452408>):
+  app/controllers/secrets_controller.rb:5:in `index'
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (121.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SecretsController#index (for 127.0.0.1 at 2010-06-23 02:56:21) [GET]
+  [4;36;1mMessage Load (0.8ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering secrets/index
+Completed in 111ms (View: 103, DB: 1) | 200 OK [http://localhost/secrets]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 02:56:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+** TwitterAuth initialized properly.
+** TwitterAuth initialized properly.
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMessages (20100622164941)
+Migrating to TwitterAuthMigration (20100622181102)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "users" already exists: CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "twitter_id" varchar(255), "login" varchar(255), "access_token" varchar(255), "access_secret" varchar(255), "remember_token" varchar(255), "remember_token_expires_at" datetime, "name" varchar(255), "location" varchar(255), "description" varchar(255), "profile_image_url" varchar(255), "url" varchar(255), "protected" boolean, "profile_background_color" varchar(255), "profile_sidebar_fill_color" varchar(255), "profile_link_color" varchar(255), "profile_sidebar_border_color" varchar(255), "profile_text_color" varchar(255), "profile_background_image_url" varchar(255), "profile_background_tile" boolean, "friends_count" integer, "statuses_count" integer, "followers_count" integer, "favourites_count" integer, "utc_offset" integer, "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+** TwitterAuth initialized properly.
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateMessages (20100622164941)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar(255) NOT NULL, "tweet_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100622164941')[0m
+Migrating to TwitterAuthMigration (20100622181102)
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "twitter_id" varchar(255), "login" varchar(255), "access_token" varchar(255), "access_secret" varchar(255), "remember_token" varchar(255), "remember_token_expires_at" datetime, "name" varchar(255), "location" varchar(255), "description" varchar(255), "profile_image_url" varchar(255), "url" varchar(255), "protected" boolean, "profile_background_color" varchar(255), "profile_sidebar_fill_color" varchar(255), "profile_link_color" varchar(255), "profile_sidebar_border_color" varchar(255), "profile_text_color" varchar(255), "profile_background_image_url" varchar(255), "profile_background_tile" boolean, "friends_count" integer, "statuses_count" integer, "followers_count" integer, "favourites_count" integer, "utc_offset" integer, "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100622181102')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+** TwitterAuth initialized properly.
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-23 03:12:28) [GET]
+Redirected to https://twitter.com/oauth/authenticate?oauth_token=M8t1BdieRS0Cg3li27dvwuG7WvJgzUjIIHBH4cR4&oauth_callback=http%3A%2F%2Flocalhost.com%3A3000%2Foauth_callback
+Completed in 1643ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing SessionsController#oauth_callback (for 127.0.0.1 at 2010-06-23 03:12:31) [GET]
+  Parameters: {"oauth_token"=>"M8t1BdieRS0Cg3li27dvwuG7WvJgzUjIIHBH4cR4", "oauth_verifier"=>"4MHdfPaebS75pRu69vZnHlz41U7SHdgyJ8VOi5HUxY"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."twitter_id" = '110263229') LIMIT 1[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'dev_func09') LIMIT 1[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."twitter_id" = '110263229') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "profile_sidebar_fill_color", "profile_sidebar_border_color", "profile_background_tile", "location", "profile_image_url", "created_at", "access_secret", "remember_token_expires_at", "profile_link_color", "updated_at", "url", "favourites_count", "utc_offset", "twitter_id", "remember_token", "protected", "profile_text_color", "followers_count", "description", "profile_background_color", "time_zone", "login", "profile_background_image_url", "friends_count", "statuses_count", "access_token") VALUES('開発func09', 'e0ff92', '87bc44', 'f', '', 'http://s.twimg.com/a/1277162817/images/default_profile_6_normal.png', '2010-06-22 18:12:34', 'ZMFtxXofAuhI0Z7djTcK2rBnO0bxwdw4cWBiOLovW0', NULL, '0000ff', '2010-06-22 18:12:34', 'http://localhost:3000/', 0, 32400, '110263229', NULL, 'f', '000000', 2, 'これは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよ', '9ae4e8', 'Tokyo', 'dev_func09', 'http://s.twimg.com/a/1277162817/images/themes/theme1/bg.png', 1, 60, '110263229-mQiXB2T3Z1RjK4WFU6vsEt28ePtK6Myq0Pg4twwy')[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'dev_func09' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."twitter_id" = '110263229' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."remember_token" = 'b87de8918166de259227' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-22 18:12:34', "remember_token" = 'b87de8918166de259227', "remember_token_expires_at" = '2010-07-06 18:12:34' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 2953ms (DB: 2) | 302 Found [http://localhost/oauth_callback?oauth_token=M8t1BdieRS0Cg3li27dvwuG7WvJgzUjIIHBH4cR4&oauth_verifier=4MHdfPaebS75pRu69vZnHlz41U7SHdgyJ8VOi5HUxY]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 03:12:34) [GET]
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 40ms (View: 29, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 03:12:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+** TwitterAuth initialized properly.
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+** TwitterAuth initialized properly.
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mMessage Create (0.5ms)[0m   [0mINSERT INTO "messages" ("tweet_id", "created_at", "body", "updated_at") VALUES(NULL, '2010-06-22 18:21:18', 'a', '2010-06-22 18:21:18')[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" [0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO "messages" ("tweet_id", "created_at", "body", "updated_at") VALUES(NULL, '2010-06-22 18:23:18', 'b', '2010-06-22 18:23:18')[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 03:23:56) [GET]
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 35ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 03:23:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+** TwitterAuth initialized properly.
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-23 03:24:21) [POST]
+  Parameters: {"commit"=>"穴につぶやく", "authenticity_token"=>"sS7kZUKCrrB41yXEOVcPFbliW7HGq6oCEVLI+o03az4=", "message"=>{"body"=>"あいうえお"}}
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'dev_func09') LIMIT 1[0m
+  [4;36;1mMessage Create (0.5ms)[0m   [0;1mINSERT INTO "messages" ("tweet_id", "created_at", "body", "updated_at") VALUES(16789381022, '2010-06-22 18:24:23', 'あいうえお', '2010-06-22 18:24:23')[0m
+Redirected to http://localhost:3000/
+Completed in 1979ms (DB: 1) | 302 Found [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 03:24:23) [GET]
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 37ms (View: 29, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 03:24:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 03:26:47) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 138ms (View: 130, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 03:26:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 03:34:38) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 22ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 03:34:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 03:34:55) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 22ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 03:34:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 03:35:20) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 127ms (View: 119, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 03:35:20) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-23 03:35:44) [GET]
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 29ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-23 03:35:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+** TwitterAuth initialized properly.
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 00:24:02) [GET]
+
+ActionController::RoutingError (No route matches "/admin/users" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-25 00:24:09) [GET]
+  [4;36;1mMessage Load (13.3ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 223ms (View: 193, DB: 13) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 00:24:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+** TwitterAuth initialized properly.
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-25 00:27:02) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 33ms (View: 25, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 00:27:02) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-25 00:27:13) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 25ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 00:27:14) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/manage/manage.css" with {:method=>:get}):
+  haml (3.0.11) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-25 00:27:32) [GET]
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 126ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-25 00:27:41) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 23ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+** TwitterAuth initialized properly.
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateMessages (20100622164941)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar(255) NOT NULL, "tweet_id" integer, "user_id" integer, "anonymous" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100622164941')[0m
+Migrating to TwitterAuthMigration (20100622181102)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "twitter_id" varchar(255), "login" varchar(255), "access_token" varchar(255), "access_secret" varchar(255), "remember_token" varchar(255), "remember_token_expires_at" datetime, "name" varchar(255), "location" varchar(255), "description" varchar(255), "profile_image_url" varchar(255), "url" varchar(255), "protected" boolean, "profile_background_color" varchar(255), "profile_sidebar_fill_color" varchar(255), "profile_link_color" varchar(255), "profile_sidebar_border_color" varchar(255), "profile_text_color" varchar(255), "profile_background_image_url" varchar(255), "profile_background_tile" boolean, "friends_count" integer, "statuses_count" integer, "followers_count" integer, "favourites_count" integer, "utc_offset" integer, "time_zone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100622181102')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-25 00:30:34) [GET]
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 18ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-25 00:32:06) [GET]
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (remember_token = 'b87de8918166de259227' AND remember_token_expires_at > '2010-06-25 00:32:06') LIMIT 1[0m
+Completed in 86ms (View: 77, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-06-25 00:32:08) [GET]
+Redirected to https://twitter.com/oauth/authenticate?oauth_token=3dMzp1vBTi7dq3NCDiOChHkIqiyCNWCzfX0AojJU&oauth_callback=http%3A%2F%2Flocalhost.com%3A3000%2Foauth_callback
+Completed in 862ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing SessionsController#oauth_callback (for 127.0.0.1 at 2010-06-25 00:32:10) [GET]
+  Parameters: {"oauth_token"=>"3dMzp1vBTi7dq3NCDiOChHkIqiyCNWCzfX0AojJU", "oauth_verifier"=>"ShCel1maH8MBubEPSKACcm2HaY8LcdIP7g2gGRerNE"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."twitter_id" = '110263229') LIMIT 1[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'dev_func09') LIMIT 1[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."twitter_id" = '110263229') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "profile_sidebar_fill_color", "profile_sidebar_border_color", "profile_background_tile", "location", "profile_image_url", "created_at", "access_secret", "remember_token_expires_at", "profile_link_color", "updated_at", "url", "favourites_count", "utc_offset", "twitter_id", "remember_token", "protected", "profile_text_color", "followers_count", "description", "profile_background_color", "time_zone", "login", "profile_background_image_url", "friends_count", "statuses_count", "access_token") VALUES('開発func09', 'e0ff92', '87bc44', 'f', '', 'http://s.twimg.com/a/1277334364/images/default_profile_6_normal.png', '2010-06-24 15:32:12', 'ZMFtxXofAuhI0Z7djTcK2rBnO0bxwdw4cWBiOLovW0', NULL, '0000ff', '2010-06-24 15:32:12', 'http://localhost:3000/', 0, 32400, '110263229', NULL, 'f', '000000', 2, 'これは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよこれは開発用アカウントだよ', '9ae4e8', 'Tokyo', 'dev_func09', 'http://s.twimg.com/a/1277334364/images/themes/theme1/bg.png', 1, 63, '110263229-mQiXB2T3Z1RjK4WFU6vsEt28ePtK6Myq0Pg4twwy')[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'dev_func09' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."twitter_id" = '110263229' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mTwitterAuth::GenericUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."remember_token" = '936185679b211a2b66fd' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-24 15:32:12', "remember_token" = '936185679b211a2b66fd', "remember_token_expires_at" = '2010-07-08 15:32:12' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 1735ms (DB: 2) | 302 Found [http://localhost/oauth_callback?oauth_token=3dMzp1vBTi7dq3NCDiOChHkIqiyCNWCzfX0AojJU&oauth_verifier=ShCel1maH8MBubEPSKACcm2HaY8LcdIP7g2gGRerNE]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-25 00:32:12) [GET]
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-25 00:33:33) [GET]
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 55ms (View: 15, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-25 00:33:36) [POST]
+  Parameters: {"commit"=>"穴につぶやく", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "message"=>{"body"=>""}}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 126ms (View: 115, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-25 00:34:53) [POST]
+  Parameters: {"commit"=>"穴につぶやく", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "message"=>{"body"=>""}}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 36ms (View: 24, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-25 00:35:15) [POST]
+  Parameters: {"commit"=>"穴につぶやく", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "message"=>{"body"=>""}}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 37ms (View: 24, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-06-25 00:35:26) [POST]
+  Parameters: {"commit"=>"匿名でつぶやく", "authenticity_token"=>"3RrHd8bqmod6z7/sYIZnPKTtLMcr33C/GFU7wH51xt0=", "message"=>{"body"=>"あいうえお"}}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mMessage Create (0.3ms)[0m   [0;1mINSERT INTO "messages" ("tweet_id", "created_at", "body", "updated_at", "anonymous", "user_id") VALUES(NULL, '2010-06-24 15:35:26', 'あいうえお', '2010-06-24 15:35:26', 't', NULL)[0m
+Redirected to http://localhost:3000/
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-06-25 00:35:26) [GET]
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing SecretsController#index (for 127.0.0.1 at 2010-06-25 00:35:32) [GET]
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM "messages" ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering secrets/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 39ms (View: 30, DB: 1) | 200 OK [http://localhost/secrets]
