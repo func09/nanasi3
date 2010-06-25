@@ -24,6 +24,13 @@
               %p= msg
           = yield
         #side-section
+          .adsense
+            :javascript
+               google_ad_client = "pub-7941320190288826";
+               google_ad_slot = "6943591828";
+               google_ad_width = 250;
+               google_ad_height = 250;
+            = javascript_include_tag 'http://pagead2.googlesyndication.com/pagead/show_ads.js'
           = yield(:side)
       
       #footer
