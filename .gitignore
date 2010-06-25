@@ -2,4 +2,5 @@
 .DS_Store
 env.rb
 db/*.sqlite3
+db/schema.rb
 log/*

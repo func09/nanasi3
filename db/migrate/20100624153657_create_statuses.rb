@@ -3,7 +3,7 @@ class CreateStatuses < ActiveRecord::Migration
     create_table :statuses do |t|
       t.string :uuid, :null => false
       t.string :text, :null => false
-      t.integer :tweet_id
+      t.float :tweet_id
       t.integer :user_id
       t.boolean :anonymous, :default => true
       t.timestamps
