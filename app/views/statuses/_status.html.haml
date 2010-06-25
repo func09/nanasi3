@@ -7,3 +7,5 @@
       %span.entry-content= h status.text
   %span.meta
     = link_to("#{distance_of_time_in_words_to_now(status.created_at)}前", uuid_status_path(status.uuid))
+  %span.twitter
+    = link_to("twitter", tweet_url(status))

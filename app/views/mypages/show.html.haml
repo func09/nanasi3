@@ -1,0 +1,8 @@
+- title "#{APP_CONFIG[:sitename]} - あなたの匿名つぶやき"
+
+%h2 あなたの匿名つぶやき
+
+#status-list-box
+  %ol(id='timeline' class='statuses')
+    - @statuses.each do |status|
+      = render :partial => 'statuses/status', :locals => {:status => status}

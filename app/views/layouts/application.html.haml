@@ -13,6 +13,7 @@
           %ul#nav
             %li= link_to 'ホーム', '/'
             - if logged_in?
+              %li= link_to 'あなたの匿名つぶやき', mypage_path
               %li= link_to 'ログアウト', logout_path
             - else
               %li= link_to 'ログイン', login_path

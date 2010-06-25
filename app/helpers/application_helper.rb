@@ -7,4 +7,9 @@ module ApplicationHelper
   def show_title?
     @show_title
   end
+  
+  def tweet_url(status)
+    "http://twitter.com/#{app_user.login}/statuses/#{status.tweet_id}"
+  end
+  
 end
