@@ -1,7 +1,7 @@
 development:
   strategy: oauth
-  oauth_consumer_key: 0Q7hw39wxjPoVeYXKD2yA
-  oauth_consumer_secret: 340KMjV6xfXZgWy1TGQHPz9CMZuDxdWm7gW3HjDvsc
+  oauth_consumer_key: <%= ENV['OAUTH_CONSUMER_KEY'] %>
+  oauth_consumer_secret: <%= ENV['OAUTH_CONSUMER_SECRET'] %>
   base_url: "https://twitter.com"
   authorize_path: "/oauth/authenticate"
   api_timeout: 10
