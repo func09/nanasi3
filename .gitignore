@@ -1,4 +1,5 @@
 .bundle
 .DS_Store
+env.rb
 db/*.sqlite3
 log/*
