@@ -1,0 +1,20 @@
+#container {
+  width: 860px;
+  margin: 0 auto; }
+  #container #main #content {
+    float: left;
+    width: 590px; }
+  #container #main #side {
+    float: right;
+    width: 270px; }
+
+#status-update-box .count.positive {
+  color: #999; }
+#status-update-box .count.negative {
+  color: red; }
+
+body {
+  background: #EEE; }
+
+#main #content {
+  background: white; }

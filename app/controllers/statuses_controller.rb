@@ -21,8 +21,10 @@ class StatusesController < ApplicationController
     end
     
     if @status.save
+      flash['success'] = '匿名ツイートに成功しました'
       redirect_to :action => 'index'
     else
+      flash['error'] = '匿名ツイートに失敗しました'
       render :action => "index"
     end
   end

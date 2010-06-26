@@ -2,6 +2,8 @@ class Status < ActiveRecord::Base
   belongs_to :user
   before_create :tweet
   validates_uniqueness_of :uuid
+  validates_presence_of :text
+  validates_length_of :text, :maximum => 140
   attr_accessor :tweet_extention
   
   default_value_for :uuid do

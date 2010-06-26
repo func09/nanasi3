@@ -17,4 +17,14 @@
   %ol(id='timeline' class='statuses')
     - @statuses.each do |status|
       = render :partial => 'status', :locals => {:status => status}
+
+:javascript
+  $(function(){
+    $('#status_text').NobleCount('#status-update-box .count', {
+      max_chars: 140 - $('#status_tweet_extention').val().length,
+      block_negative: true,
+      on_negative: 'negative',
+      on_positive: 'positive'
+    });
+  });
   
