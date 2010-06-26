@@ -1,4 +1,7 @@
 %li.status(id="status-#{status.id}")
+  .topsy_widget_data
+    /
+      {"url": "#{tweet_url(status)}"}
   %span.thumb
     = image_tag app_user.profile_image_url
   %span.status-body
