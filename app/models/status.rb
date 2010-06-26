@@ -8,10 +8,7 @@ class Status < ActiveRecord::Base
     Forgery::Basic.text :at_least => 6, :at_most => 6
   end
   
-  default_value_for :tweet_extention do |x|
-    " http://#{APP_CONFIG[:domain]}/#{x.uuid} #{APP_CONFIG[:twitter]['hashtag']}"
-  end
-  
+  default_value_for :tweet_extention, " #{APP_CONFIG[:twitter]['hashtag']}"  
   private
     
     # 保存時にツイッターにつぶやきます
