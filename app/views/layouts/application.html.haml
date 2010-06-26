@@ -3,6 +3,7 @@
   %head
     %title= yield(:title) || "つぶやき＠名無しさん"
     = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
+    = javascript_include_tag "http://platform.twitter.com/anywhere.js?id=#{TwitterAuth.config['oauth_consumer_key']}&v=1"
     = yield(:head)
   %body(class="#{controller_name}-#{action_name}")
     #container
@@ -29,3 +30,11 @@
       
       #footer
         &copy;2010 func09 <a href='/about'>このサービスについて</a>
+        
+      :javascript
+        twttr.anywhere(function (T) {
+          T.hovercards({ expanded: true });
+          T('#follow-nanasi3').followButton("#{app_user.login}");
+        });
+        
+        
