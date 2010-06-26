@@ -73,7 +73,7 @@ specs:
     version: 1.3.0
 - sqlite3-ruby: 
     version: 1.3.0
-hash: da691222b5a01c89a110b68af339ce13789a9a33
+hash: d2eca557b4bcdc65c3cef9786351a31bfeded921
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org
