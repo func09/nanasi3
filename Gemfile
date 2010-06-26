@@ -7,9 +7,6 @@ gem 'json'
 gem 'oauth'
 gem 'ezcrypto'
 
-# Devise 1.0.2 is not a valid gem plugin for Rails, so use git until 1.0.3
-# gem 'devise', :git => 'git://github.com/plataformatec/devise.git', :ref => 'v1.0'
-
 group :development do
   # bundler requires these gems in development
   gem 'rails-footnotes'
