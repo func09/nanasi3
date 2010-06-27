@@ -11,12 +11,12 @@ class ApplicationController < ActionController::Base
   helper_method :app_user, :app_hashtag
   
   def app_user
-    @app_user if defined? @app_user
+    return @app_user if defined? @app_user
     @app_user = User.find_by_login(APP_CONFIG[:twitter]['app_user'])
   end
   
   def app_hashtag
-    @@app_hashtag if defined? @@app_hashtag
+    return @@app_hashtag if defined? @@app_hashtag
     @@app_hashtag = APP_CONFIG['twitter']['hashtag']
   end
   
