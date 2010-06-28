@@ -26,7 +26,7 @@
             - else
               %li= link_to 'ログイン', login_path
         
-      #main
+      #main.clearfix
         #content
           - flash.each do |name, msg|
             %div(class="flash #{name}" id="flash_#{name}")

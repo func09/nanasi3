@@ -1,4 +1,8 @@
+@import "mixin";
+@import "reset";
+@import "hack";
 @import "layout";
+@import "flash";
 @import "statuses";
 
 body {
@@ -12,5 +16,6 @@ body {
     }
 
   #side {
+    background: #ccc;
     }
   }

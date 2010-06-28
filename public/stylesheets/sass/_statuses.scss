@@ -4,3 +4,48 @@
   .count.negative { color: red; }
   
   }
+
+#status-list-box {
+  .statuses {
+    
+    li.status {
+      position: relative;
+      padding: 6px 0;
+      border-bottom: 1px solid #ccc;
+      
+      .thumb {
+        display: block;
+        width: 50px;
+        position: absolute;
+        top: 6px;
+        left: 0px;
+        }
+      
+      .status-body {
+        display: block;
+        margin-left: 56px;
+        }
+      
+      .status-content {
+        font-size: 12px;
+        strong {
+          font-size: 14px;
+          font-weight: bold;
+          color: green;
+          display: block;
+          }
+        }
+        
+      .status-meta {
+        display: block;
+        margin-left: 56px;
+        font-size: 11px;
+        color: #999;
+        .topsy_widget_data {
+          float: left;
+          }
+        }
+      
+      }
+    }
+  }
