@@ -106,6 +106,15 @@ input, button, textarea, select {
   border-color: #FFD324;
   color: #514721; }
 
+#header {
+  margin-bottom: 10px; }
+  #header h1 {
+    font-size: 25px;
+    font-weight: bold; }
+  #header ul#nav li {
+    float: left;
+    margin-right: 0.5em; }
+
 #status-update-box .count.positive {
   color: #999; }
 #status-update-box .count.negative {
