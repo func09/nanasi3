@@ -3,6 +3,36 @@
   .count.positive { color: #999; }
   .count.negative { color: red; }
   
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    }
+  
+  fieldset {
+    position: relative;
+    margin-bottom: 1em;
+    .count {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      font-size: 18px;
+      font-weight: bold;
+      }
+    p.box {
+      margin-bottom: 0.5em;
+      text-align: right;
+      }
+    }
+  
+  textarea#status_text {
+    @include box-sizing;
+    width: 100%;
+    @include border-radius(3px,3px,3px,3px);
+    border: 1px solid #AAAAAA;
+    padding: 4px 2px;
+    }
+  
   }
 
 #status-list-box {

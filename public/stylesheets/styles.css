@@ -110,6 +110,41 @@ input, button, textarea, select {
   color: #999; }
 #status-update-box .count.negative {
   color: red; }
+#status-update-box h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333; }
+#status-update-box fieldset {
+  position: relative;
+  margin-bottom: 1em; }
+  #status-update-box fieldset .count {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 18px;
+    font-weight: bold; }
+  #status-update-box fieldset p.box {
+    margin-bottom: 0.5em;
+    text-align: right; }
+#status-update-box textarea#status_text {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border: 1px solid #AAAAAA;
+  padding: 4px 2px; }
 
 #status-list-box .statuses li.status {
   position: relative;

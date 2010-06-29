@@ -1,17 +1,6 @@
 - title "#{APP_CONFIG[:sitename]} - ホーム"
 #status-update-box
-  - form_for(Status.new) do |f|
-    = f.hidden_field :uuid
-    = f.hidden_field :tweet_extention
-    %fieldset
-      %div
-        %h3 匿名でつぶやいてみる？
-        %span.count 140
-      %div
-        %p
-          = f.text_area :text, :size => '40x2'
-        %div
-          = f.submit '匿名でツイート'
+  = render :partial => 'new'
 
 #status-list-box
   %ol(id='timeline' class='statuses')

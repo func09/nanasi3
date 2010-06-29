@@ -1,0 +1,13 @@
+- form_for(Status.new) do |f|
+  = f.hidden_field :uuid
+  = f.hidden_field :tweet_extention
+  %fieldset
+    %div
+      %h3
+        = f.label :text, '匿名でつぶやいてみる？'
+      %span.count 132
+    %div
+      %p.box
+        = f.text_area :text, :size => '40x2'
+      %p.box
+        = f.submit '匿名でツイート'
