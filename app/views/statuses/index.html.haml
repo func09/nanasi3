@@ -1,6 +1,6 @@
 - title "#{APP_CONFIG[:sitename]} - ホーム"
 #status-update-box
-  - form_for(@status) do |f|
+  - form_for(Status.new) do |f|
     = f.hidden_field :uuid
     = f.hidden_field :tweet_extention
     %fieldset
@@ -15,8 +15,9 @@
 
 #status-list-box
   %ol(id='timeline' class='statuses')
-    - @statuses.each do |status|
-      = render :partial => 'status', :locals => {:status => status}
+    = render :partial => 'timeline', :locals => {:statuses => @statuses}
+  #pagination
+    = render :partial => 'more', :locals => {:next_page => @statuses.next_page}
 
 :javascript
   $(function(){
@@ -26,5 +27,16 @@
       on_negative: 'negative',
       on_positive: 'positive'
     });
+    
+    $('#more').live('click', function(event){
+      event.preventDefault();
+      $.get($('#more').attr('href'), function(data){
+        pagination = data['pagination'];
+        timeline = data['timeline'];
+        $('#pagination').html(pagination);
+        $('#timeline').append(timeline);
+      });
+    });
+    
   });
   

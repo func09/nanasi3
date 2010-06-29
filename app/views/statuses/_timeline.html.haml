@@ -1,0 +1,15 @@
+- statuses.each do |status|
+  %li.status(id="status-#{status.id}")
+    %span.thumb
+      = image_tag app_user.profile_image_url
+    %span.status-body
+      %span.status-content
+        %strong= app_user.login
+        %span.entry-content= h status.text
+    .status-meta
+      = link_to("#{distance_of_time_in_words_to_now(status.created_at)}前", uuid_status_path(status.uuid))
+      %span.twitter
+        = link_to("twitter", tweet_url(status))
+      .topsy_widget_data
+        /
+          {"url": "#{tweet_url(status)}"}

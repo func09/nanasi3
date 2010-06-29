@@ -1,10 +1,24 @@
 class StatusesController < ApplicationController
+  
+  @@per_page = 20
+  
   # GET /statuses
   def index
-    @status = Status.new
-    @statuses = Status.find(:all, :order => 'created_at DESC')
+    @statuses = Status.paginate(:page => params[:page], :per_page => @@per_page, :order => 'created_at DESC')
   end
-
+  
+  # GET /statuses/timeline.json
+  def timeline
+    @statuses = Status.paginate(:page => params[:page], :per_page => @@per_page, :order => 'created_at DESC')
+    data = {
+      :pagination => render_to_string(:template => '/statuses/_more.html.haml', :locals => {:next_page => @statuses.next_page}),
+      :timeline => render_to_string(:template => '/statuses/_timeline.html.haml', :locals => {:statuses => @statuses}),
+    }
+    respond_to do |format|
+      format.json { render :json => data }
+    end
+  end
+  
   # GET /statuses/1
   def show
     @status = Status.find_by_uuid(params[:uuid])
@@ -13,7 +27,7 @@ class StatusesController < ApplicationController
   # POST /statuses
   def create
     @status = Status.new(params[:status])
-    @statuses = Status.find(:all, :order => 'created_at DESC')
+    @statuses = Status.paginate(:page => params[:page], :per_page => @@per_page, :order => 'created_at DESC')
     
     if logged_in?
       @status.user = current_user
