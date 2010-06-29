@@ -1,6 +1,6 @@
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
-
+require 'digest/md5'
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   
   def signature
     return @signature if defined? @signature
-    @signature = request.remote_ip.crypt(Date.today.to_s)
+    @signature = Digest::MD5.hexdigest([request.remote_ip,request.headers['HTTP_USER_AGENT']].join).crypt(Digest::MD5.hexdigest(Date.today.to_s))
   end
   
 end
