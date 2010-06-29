@@ -7,18 +7,13 @@
      google_ad_height = 250;
   = javascript_include_tag 'http://pagead2.googlesyndication.com/pagead/show_ads.js'
 
-.section#profile
-  .user-icon
-    %a(href="http://twitter.com/#{app_user.login}")
-      = image_tag app_user.profile_image_url
-      %span#me_name= app_user.login
-      %span#me_tweets= "#{app_user.statuses_count}ツイート"
-  .stats
-    = "#{app_user.followers_count}フォローされている"
-
+.section
+  %h3 このサービスについて
+  %p
+    このサービスは、匿名でツイッターにつぶやきができる匿名つぶやきサービスです。
 
 .section
-  %h4 名無しアカウントをフォローしよう！
+  %h3 名無しアカウントをフォローしよう！
   #follow-nanasi3
   
 = yield(:side)
