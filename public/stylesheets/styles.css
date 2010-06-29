@@ -113,13 +113,13 @@ input, button, textarea, select {
 
 #status-list-box .statuses li.status {
   position: relative;
-  padding: 6px 0;
+  padding: 10px 0;
   border-bottom: 1px solid #ccc; }
   #status-list-box .statuses li.status .thumb {
     display: block;
     width: 50px;
     position: absolute;
-    top: 6px;
+    top: 10px;
     left: 0px; }
   #status-list-box .statuses li.status .status-body {
     display: block;
@@ -133,6 +133,7 @@ input, button, textarea, select {
       display: block; }
   #status-list-box .statuses li.status .status-meta {
     display: block;
+    text-align: right;
     margin-left: 56px;
     font-size: 11px;
     color: #999; }
