@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   
-  helper_method :app_user, :app_hashtag
+  helper_method :app_user, :app_hashtag, :signature
   
   def app_user
     return @app_user if defined? @app_user
@@ -18,6 +18,11 @@ class ApplicationController < ActionController::Base
   def app_hashtag
     return @@app_hashtag if defined? @@app_hashtag
     @@app_hashtag = APP_CONFIG['twitter']['hashtag']
+  end
+  
+  def signature
+    return @signature if defined? @signature
+    @signature = request.remote_ip.crypt(Date.today.to_s)
   end
   
 end

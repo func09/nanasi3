@@ -1,5 +1,5 @@
 - statuses.each do |status|
-  %li.status(id="status-#{status.id}")
+  %li.status(id="status-#{status.id}" data-sig="#{status.signature}")
     %span.thumb
       = image_tag app_user.profile_image_url
     %span.status-body

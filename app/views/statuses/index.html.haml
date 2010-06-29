@@ -1,3 +1,4 @@
+= signature
 - title "#{APP_CONFIG[:sitename]} - ホーム"
 #status-update-box
   - form_for(Status.new) do |f|
@@ -20,7 +21,11 @@
     = render :partial => 'more', :locals => {:next_page => @statuses.next_page}
 
 :javascript
+  
   $(function(){
+    
+    $('#status-list-box li[data-sig="#{signature}"]').addClass('mine');
+    
     $('#status_text').NobleCount('#status-update-box .count', {
       max_chars: 140 - $('#status_tweet_extention').val().length,
       block_negative: true,

@@ -27,6 +27,7 @@ class StatusesController < ApplicationController
   # POST /statuses
   def create
     @status = Status.new(params[:status])
+    @status.signature = signature
     @statuses = Status.paginate(:page => params[:page], :per_page => @@per_page, :order => 'created_at DESC')
     
     if logged_in?

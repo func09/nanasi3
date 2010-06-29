@@ -139,6 +139,8 @@ input, button, textarea, select {
     color: #999; }
     #status-list-box .statuses li.status .status-meta .topsy_widget_data {
       float: left; }
+#status-list-box .statuses li.status.mine {
+  background: #f1fcfd; }
 
 body {
   background: #EEE; }
