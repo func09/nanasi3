@@ -11,6 +11,7 @@ class Status < ActiveRecord::Base
   end
   
   default_value_for :tweet_extention, " #{APP_CONFIG[:twitter]['hashtag']}"  
+  before_destroy :remove_tweet
   private
     
     # 保存時にツイッターにつぶやきます
@@ -19,4 +20,9 @@ class Status < ActiveRecord::Base
       res = User.app_user.twitter.post('/statuses/update.json', 'status' => message) 
       self.tweet_id = res['id']
     end
+    
+    def remove_tweet
+      User.app_user.twitter.post('/statuses/destroy.json', 'id' => self.tweet_id)
+    end
+    
 end

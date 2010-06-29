@@ -1,15 +1,28 @@
 - title "#{APP_CONFIG[:sitename]} - あなたの匿名つぶやき"
-
-%h2 あなたの匿名つぶやき
+#status-update-box
+  - form_for(Status.new) do |f|
+    = f.hidden_field :uuid
+    = f.hidden_field :tweet_extention
+    %fieldset
+      %div
+        %h3 匿名でつぶやいてみる？
+        %span.count 140
+      %div
+        %p
+          = f.text_area :text, :size => '40x2'
+        %div
+          = f.submit '匿名でツイート'
 
 #status-list-box
   %ol(id='timeline' class='statuses')
-    = render :partial => '/statuses/timeline', :locals => {:statuses => @statuses}
+    = render :partial => 'timeline', :locals => {:statuses => @statuses}
   #pagination
-    = render :partial => '/statuses/more', :locals => {:next_page => @statuses.next_page}
+    = render :partial => 'more', :locals => {:next_page => @statuses.next_page}
 
 :javascript
+  
   $(function(){
+    
     $('#status_text').NobleCount('#status-update-box .count', {
       max_chars: 140 - $('#status_tweet_extention').val().length,
       block_negative: true,
@@ -28,3 +41,4 @@
     });
     
   });
+  

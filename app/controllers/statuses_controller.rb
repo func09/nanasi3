@@ -1,5 +1,7 @@
 class StatusesController < ApplicationController
   
+  before_filter :login_required, :only => [:destroy]
+  
   @@per_page = 20
   
   # GET /statuses
@@ -44,10 +46,4 @@ class StatusesController < ApplicationController
     end
   end
 
-  # DELETE /statuses/1
-  def destroy
-    @status = Status.find(params[:id])
-    @status.destroy
-    redirect_to(statuses_url)
-  end
 end
