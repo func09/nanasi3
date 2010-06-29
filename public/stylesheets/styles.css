@@ -115,8 +115,7 @@ input, button, textarea, select {
   font-weight: bold;
   color: #333; }
 #status-update-box fieldset {
-  position: relative;
-  margin-bottom: 1em; }
+  position: relative; }
   #status-update-box fieldset .count {
     position: absolute;
     top: 0px;
@@ -160,7 +159,7 @@ input, button, textarea, select {
     display: block;
     margin-left: 56px; }
   #status-list-box .statuses li.status .status-content {
-    font-size: 12px; }
+    font-size: 13px; }
     #status-list-box .statuses li.status .status-content strong {
       font-size: 14px;
       font-weight: bold;
@@ -176,6 +175,25 @@ input, button, textarea, select {
       float: left; }
 #status-list-box .statuses li.status.mine {
   background: #f1fcfd; }
+#status-list-box #pagination {
+  margin-top: .8em; }
+  #status-list-box #pagination a#more {
+    display: block;
+    background: #EEE;
+    padding: 10px;
+    text-align: center;
+    -webkit-border-top-left-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-topright: 6px;
+    -moz-border-radius-bottomright: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px; }
 
 body {
   background: #EEE; }

@@ -11,7 +11,7 @@
   
   fieldset {
     position: relative;
-    margin-bottom: 1em;
+    // margin-bottom: 1em;
     .count {
       position: absolute;
       top: 0px;
@@ -57,7 +57,7 @@
         }
       
       .status-content {
-        font-size: 12px;
+        font-size: 13px;
         strong {
           font-size: 14px;
           font-weight: bold;
@@ -82,4 +82,16 @@
       background: #f1fcfd;
       }
     }
+    
+    #pagination {
+      margin-top: .8em;
+      a#more {
+        display: block;
+        background: #EEE;
+        padding: 10px;
+        text-align: center;
+        @include border-radius(6px,6px,6px,6px);
+        }
+      }
+    
   }
