@@ -1,8 +1,7 @@
 class StatusesController < ApplicationController
   
   before_filter :login_required, :only => [:destroy]
-  
-  @@per_page = 20
+  @@per_page = APP_CONFIG[:statuses]['per_page']
   
   # GET /statuses
   def index

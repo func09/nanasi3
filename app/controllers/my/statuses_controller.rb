@@ -1,7 +1,7 @@
 class My::StatusesController < ApplicationController
   
   before_filter :login_required
-  @@per_page = 20
+  @@per_page = APP_CONFIG[:statuses]['per_page']
   
   def index
     @statuses = current_user.statuses.paginate(

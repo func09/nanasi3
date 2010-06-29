@@ -1,6 +1,8 @@
 development:
   domain: localhost:3000
   sitename: つぶやき＠名無し（開発）
+  statuses:
+    per_page: 5
   twitter:
     app_user: dev_func09
     hashtag: '#nanasi'
@@ -10,6 +12,8 @@ test:
 production:
   domain: nanasi3.com
   sitename: つぶやき＠名無し
+  statuses:
+    per_page: 20
   twitter:
     app_user: nanasi_3
     hashtag: '#nanasi'
