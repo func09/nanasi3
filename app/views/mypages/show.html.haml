@@ -4,5 +4,27 @@
 
 #status-list-box
   %ol(id='timeline' class='statuses')
-    - @statuses.each do |status|
-      = render :partial => 'statuses/status', :locals => {:status => status}
+    = render :partial => '/statuses/timeline', :locals => {:statuses => @statuses}
+  #pagination
+    = render :partial => '/statuses/more', :locals => {:next_page => @statuses.next_page}
+
+:javascript
+  $(function(){
+    $('#status_text').NobleCount('#status-update-box .count', {
+      max_chars: 140 - $('#status_tweet_extention').val().length,
+      block_negative: true,
+      on_negative: 'negative',
+      on_positive: 'positive'
+    });
+    
+    $('#more').live('click', function(event){
+      event.preventDefault();
+      $.get($('#more').attr('href'), function(data){
+        pagination = data['pagination'];
+        timeline = data['timeline'];
+        $('#pagination').html(pagination);
+        $('#timeline').append(timeline);
+      });
+    });
+    
+  });
