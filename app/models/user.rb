@@ -3,7 +3,7 @@ class User < TwitterAuth::GenericUser
   
   class << self
     def app_user
-      @app_user if defined? @app_user
+      return @app_user if defined? @app_user
       @app_user = find_by_login(APP_CONFIG[:twitter]['app_user'])
     end
   end
