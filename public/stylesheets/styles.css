@@ -213,6 +213,8 @@ input, button, textarea, select {
       float: left; }
 #status-list-box .statuses li.status.mine {
   background: #f1fcfd; }
+#status-list-box .ad {
+  margin-top: 10px; }
 #status-list-box #pagination {
   margin-top: .8em; }
   #status-list-box #pagination a#more {
