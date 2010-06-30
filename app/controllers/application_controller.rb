@@ -21,6 +21,9 @@ class ApplicationController < ActionController::Base
   end
   
   def signature
+    #count = Rails.cache.read('hoge') || 0
+    #Rails.cache.write('hoge', count + 1, :expires_in => 1.minutes )
+    #p count
     return @signature if defined? @signature
     @signature = Digest::MD5.hexdigest([request.remote_ip,request.headers['HTTP_USER_AGENT']].join).crypt(Digest::MD5.hexdigest(Date.today.to_s))
   end

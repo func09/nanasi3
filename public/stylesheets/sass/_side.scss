@@ -1,0 +1,28 @@
+#side {
+  
+  h3 {
+    margin-bottom: 0.5em;
+    font-size: 14px;
+    font-weight: bold;
+    color: #191919;
+    }
+    
+  .section {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #AAA;
+    @include border-radius(3px,3px,3px,3px);
+    background: white;
+
+    p {
+      font-size: 12px;
+      }
+    
+    }
+  .ad {
+    padding: 0px;
+    border: none;
+    background: none;
+    }
+    
+  }

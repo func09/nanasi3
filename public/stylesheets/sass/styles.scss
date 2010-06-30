@@ -4,6 +4,7 @@
 @import "layout";
 @import "flash";
 @import "header";
+@import "side";
 @import "statuses";
 
 body {
@@ -11,7 +12,7 @@ body {
   }
 
 #main {
-
+  background: #ccc;
   #content {
     background: white;
     }
@@ -19,4 +20,11 @@ body {
   #side {
     background: #ccc;
     }
+  }
+
+#footer {
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  @include border-radius(0px,0px,3px,3px);
+  background: #666;
   }
