@@ -18,8 +18,6 @@
         #navSection.clearfix
           %ul#nav
             %li= link_to 'ホーム', '/'
-            %li= link_to 'このサービスについて', '/about'
-            %li= link_to '名無しへの反応', '#'
             - if logged_in?
               %li= link_to 'あなたの匿名つぶやき', my_root_path
               %li= link_to 'ログアウト', logout_path
