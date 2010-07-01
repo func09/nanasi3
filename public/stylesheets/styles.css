@@ -146,35 +146,47 @@ input, button, textarea, select {
         #header ul#nav li a:hover {
           color: #CCC; }
 
-#side h3, #side h4 {
-  margin-bottom: 0.5em;
-  font-size: 14px;
-  font-weight: bold;
-  color: #191919; }
-#side h3 {
-  font-size: 14px; }
-#side h4 {
+#side {
   font-size: 12px; }
-#side .section {
-  margin-bottom: 10px; }
-  #side .section p {
+  #side h3, #side h4 {
+    margin-bottom: 0.5em;
+    font-size: 14px;
+    font-weight: bold;
+    color: #191919; }
+  #side h3 {
+    font-size: 14px; }
+  #side h4 {
     font-size: 12px; }
-#side .box {
-  padding: 8px;
-  border: 1px solid #AAA;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  background: white; }
+  #side .section {
+    margin-bottom: 10px; }
+  #side .profile {
+    margin-bottom: 10px; }
+    #side .profile .user-icon {
+      display: block;
+      float: left; }
+    #side .profile .user-login {
+      display: block;
+      margin-left: 55px;
+      font-size: 15px;
+      font-weight: bold; }
+  #side #follow-nanasi3 {
+    margin-bottom: 10px; }
+  #side .box {
+    padding: 8px;
+    border: 1px solid #AAA;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: white; }
 
 #status-update-box .count.positive {
   color: #999; }
