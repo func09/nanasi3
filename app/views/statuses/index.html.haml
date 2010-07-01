@@ -3,6 +3,7 @@
   = render :partial => 'new'
 
 #status-list-box
+  %h2 ＠名無しさんのタイムライン
   %ol(id='timeline' class='statuses')
     = render :partial => 'timeline', :locals => {:statuses => @statuses}
   .ad

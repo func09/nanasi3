@@ -3,16 +3,17 @@
     %span.thumb
       = image_tag app_user.profile_image_url
     %span.status-body
-      %span.status-content
-        %strong= app_user.login
-        %span.entry-content= auto_link(h(status.text))
-    .status-meta
-      = link_to("#{distance_of_time_in_words_to_now(status.created_at)}前", uuid_status_path(status.uuid))
-      %span.twitter
-        = link_to("twitter", tweet_url(status))
-      %span.signature
-        = "ID:#{status.signature}" unless status.signature.blank?
-      .topsy_widget_data
-        /
-          {"url": "#{tweet_url(status)}"}
+      %div
+        = "名前：#{link_to(app_user.name, "http://twitter.com/#{app_user.login}")}"
+      %div
+        = auto_link(h(status.text))
+      .status-meta
+        = link_to("#{distance_of_time_in_words_to_now(status.created_at)}前", uuid_status_path(status.uuid))
+        %span.twitter
+          = link_to("twitter", tweet_url(status))
+        %span.signature
+          = "ID:#{status.signature}" unless status.signature.blank?
+        .topsy_widget_data
+          /
+            {"url": "#{tweet_url(status)}"}
 

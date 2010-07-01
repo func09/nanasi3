@@ -183,6 +183,10 @@ input, button, textarea, select {
   border: 1px solid #AAAAAA;
   padding: 4px 2px; }
 
+#status-list-box h2 {
+  color: red;
+  font-weight: bold;
+  font-size: 20px; }
 #status-list-box .statuses li.status {
   position: relative;
   padding: 10px 0;
