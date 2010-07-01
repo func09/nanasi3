@@ -115,14 +115,21 @@ input, button, textarea, select {
     float: left;
     margin-right: 0.5em; }
 
-#side h3 {
+#side h3, #side h4 {
   margin-bottom: 0.5em;
   font-size: 14px;
   font-weight: bold;
   color: #191919; }
+#side h3 {
+  font-size: 14px; }
+#side h4 {
+  font-size: 12px; }
 #side .section {
+  margin-bottom: 10px; }
+  #side .section p {
+    font-size: 12px; }
+#side .box {
   padding: 8px;
-  margin-bottom: 10px;
   border: 1px solid #AAA;
   -webkit-border-top-left-radius: 3px;
   -webkit-border-top-right-radius: 3px;
@@ -137,12 +144,6 @@ input, button, textarea, select {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
   background: white; }
-  #side .section p {
-    font-size: 12px; }
-#side .ad {
-  padding: 0px;
-  border: none;
-  background: none; }
 
 #status-update-box .count.positive {
   color: #999; }

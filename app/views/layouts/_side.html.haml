@@ -6,20 +6,18 @@
      google_ad_height = 250;
   = javascript_include_tag 'http://pagead2.googlesyndication.com/pagead/show_ads.js'
 
-.section
+.section.box
   %h3 はじめての方へ
   %p
     このサービスは。。。
 
-.section
-  %h3 名無しアカウントをフォローしよう！
+.section.box
+  %h3= "#{app_user.name}をフォローしよう！"
   #follow-nanasi3
-
-.section
-  %h3 フォローしている人
+  %h4 フォローしている人
 
 - if action_name == 'show'
-  .section.ad
+  .section
     %h3 ツイート
     %script(src="http://widgets.twimg.com/j/2/widget.js")
     :javascript

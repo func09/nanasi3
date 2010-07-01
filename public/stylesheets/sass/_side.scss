@@ -1,28 +1,33 @@
 #side {
   
-  h3 {
+  h3, h4 {
     margin-bottom: 0.5em;
     font-size: 14px;
     font-weight: bold;
     color: #191919;
     }
+  h3 {
+    font-size: 14px;
+    }
+  h4 {
+    font-size: 12px;
+    }
     
   .section {
-    padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #AAA;
-    @include border-radius(3px,3px,3px,3px);
-    background: white;
 
     p {
       font-size: 12px;
       }
     
     }
+  .box {
+    padding: 8px;
+    border: 1px solid #AAA;
+    @include border-radius(3px,3px,3px,3px);
+    background: white;
+    }
   .ad {
-    padding: 0px;
-    border: none;
-    background: none;
     }
     
   }
