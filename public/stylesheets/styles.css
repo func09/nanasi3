@@ -258,6 +258,9 @@ input, button, textarea, select {
   #status-list-box .statuses li.status .status-body {
     display: block;
     margin-left: 56px; }
+    #status-list-box .statuses li.status .status-body .user-name a {
+      color: green;
+      font-weight: bold; }
   #status-list-box .statuses li.status .status-content {
     font-size: 13px; }
     #status-list-box .statuses li.status .status-content strong {
@@ -271,8 +274,10 @@ input, button, textarea, select {
     margin-left: 56px;
     font-size: 11px;
     color: #999; }
-    #status-list-box .statuses li.status .status-meta .topsy_widget_data {
-      float: left; }
+    #status-list-box .statuses li.status .status-meta div.topsy_widget_data {
+      position: absolute;
+      top: 10px;
+      right: 0; }
 #status-list-box .statuses li.status.mine {
   background: #f1fcfd; }
 #status-list-box .ad {

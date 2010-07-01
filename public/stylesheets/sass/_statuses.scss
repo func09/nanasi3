@@ -59,6 +59,10 @@
       .status-body {
         display: block;
         margin-left: 56px;
+        .user-name a {
+          color: green;
+          font-weight: bold;
+          }
         }
       
       .status-content {
@@ -77,8 +81,10 @@
         margin-left: 56px;
         font-size: 11px;
         color: #999;
-        .topsy_widget_data {
-          float: left;
+        div.topsy_widget_data {
+          position: absolute;
+          top: 10px;
+          right: 0;
           }
         }
       
