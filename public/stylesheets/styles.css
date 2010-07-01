@@ -112,12 +112,10 @@ input, button, textarea, select {
     margin-left: 20px;
     margin-bottom: 10px; }
     #header h1 span.title {
-      font-size: 35px;
-      font-weight: bold;
-      display: block; }
+      font-size: 25px;
+      font-weight: bold; }
     #header h1 span.subtitle {
-      font-size: 15px;
-      display: block; }
+      font-size: 15px; }
   #header #navSection {
     background: #121212;
     -webkit-border-top-left-radius: 5px;
