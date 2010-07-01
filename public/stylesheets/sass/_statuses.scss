@@ -98,9 +98,15 @@
       a#more {
         display: block;
         background: #EEE;
-        padding: 10px;
+        padding: 5px;
         text-align: center;
-        @include border-radius(6px,6px,6px,6px);
+        // @include border-radius(6px,6px,6px,6px);
+        @include border-image('/images/btn_stretch_bg.png', 10, stretch);
+        border: 5px solid #000;
+        color: #666;
+        text-shadow: 1px 1px #fff;
+        font-weight: bold;
+        text-decoration: none;
         }
       }
     

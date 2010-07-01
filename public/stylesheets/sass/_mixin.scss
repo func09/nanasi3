@@ -25,3 +25,9 @@
   box-sizing: $mode;
 }
   
+@mixin border-image($url, $outset: 0, $repeat: stretch) {
+  -moz-border-image: url("#{$url}") $outset $repeat;
+  -webkit-border-image: url("#{$url}") $outset $repeat;
+  -o-border-image: url("#{$url}") $outset $repeat;
+  -ms-border-image: url("#{$url}") $outset $repeat;
+}
