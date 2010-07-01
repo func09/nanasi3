@@ -8,12 +8,26 @@
 
 .section.box
   %h3 はじめての方へ
-  %p
-    このサービスは。。。
+  %div
+    %p
+      このサービスは。。。
+    %ul
+      %li ツイッターに匿名でつぶやけます
+      %li ツイッターアカウントがなくても匿名でつぶやけます
+      %li ツイッターアカウントがあると自分の匿名つぶやきを確認できます
 
 .section.box
-  %h3= "#{app_user.name}をフォローしよう！"
-  #follow-nanasi3
+  %h3= "#{app_user.name}"
+  .profile
+    %div
+      = image_tag app_user.profile_image_url
+      = "@#{app_user.login}"
+    %div
+      = "フォロワー数：#{app_user.followers_count}人"
+    %div
+      = app_user.description
+    %div
+      #follow-nanasi3
   %h4 フォローしている人
   #friends
 
