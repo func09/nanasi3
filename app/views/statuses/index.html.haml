@@ -32,7 +32,7 @@
     
     $('#more').live('click', function(event){
       event.preventDefault();
-      $.get('#{timeline_statuses_path}', {next_page:$(this).attr('next')}, function(data){
+      $.get('#{timeline_statuses_path}', {page:$(this).attr('next')}, function(data){
         var pagination = data['pagination'];
         var timeline = data['timeline'];
         $('#pagination').html(pagination);
