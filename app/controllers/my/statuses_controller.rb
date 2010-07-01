@@ -13,8 +13,8 @@ class My::StatusesController < ApplicationController
   def timeline
     @statuses = current_user.statuses.paginate(:page => params[:page], :per_page => @@per_page, :order => 'created_at DESC')
     data = {
-      :pagination => render_to_string(:template => '/my/statuses/_more.html.haml', :locals => {:next_page => @statuses.next_page}),
-      :timeline => render_to_string(:template => '/my/statuses/_timeline.html.haml', :locals => {:statuses => @statuses}),
+      :pagination => render_to_string(:layout => false, :template => '/my/statuses/_more.html.haml', :locals => {:next_page => @statuses.next_page}),
+      :timeline => render_to_string(:layout => false, :template => '/my/statuses/_timeline.html.haml', :locals => {:statuses => @statuses}),
     }
     respond_to do |format|
       format.json { render :json => data }
