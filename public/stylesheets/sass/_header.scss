@@ -17,12 +17,19 @@
   
   // margin-bottom: 10px;
   
+  #navSection {
+    background: #121212;
+    @include border-radius(5px, 5px, 0, 0);
+    padding: 8px;
+    padding-bottom: 0px;
+    }
+  
   ul#nav {
-    margin-left: 5px;
+    // margin-left: 5px;
     li {
       float: left;
       margin-right: 0.5em;
-      background: black;
+      background: #444;
       @include border-radius(5px, 5px, 0, 0);
       
       

@@ -118,33 +118,47 @@ input, button, textarea, select {
     #header h1 span.subtitle {
       font-size: 15px;
       display: block; }
-  #header ul#nav {
-    margin-left: 5px; }
-    #header ul#nav li {
-      float: left;
-      margin-right: 0.5em;
-      background: black;
-      -webkit-border-top-left-radius: 5px;
-      -webkit-border-top-right-radius: 5px;
-      -webkit-border-bottom-right-radius: 0;
-      -webkit-border-bottom-left-radius: 0;
-      -moz-border-radius-topleft: 5px;
-      -moz-border-radius-topright: 5px;
-      -moz-border-radius-bottomright: 0;
-      -moz-border-radius-bottomleft: 0;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0; }
-      #header ul#nav li a {
-        display: block;
-        padding: 5px 15px;
-        color: white;
-        font-size: 14px;
-        font-weight: bold;
-        text-decoration: none; }
-        #header ul#nav li a:hover {
-          color: #CCC; }
+  #header #navSection {
+    background: #121212;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 8px;
+    padding-bottom: 0px; }
+  #header ul#nav li {
+    float: left;
+    margin-right: 0.5em;
+    background: #444;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0; }
+    #header ul#nav li a {
+      display: block;
+      padding: 5px 15px;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none; }
+      #header ul#nav li a:hover {
+        color: #CCC; }
 
 #side {
   font-size: 12px; }
@@ -306,4 +320,7 @@ body {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
-  background: #666; }
+  background: #121212;
+  color: #333;
+  text-align: center;
+  font-size: 12px; }
