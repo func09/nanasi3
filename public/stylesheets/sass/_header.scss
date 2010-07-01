@@ -1,17 +1,43 @@
 #header {
-  
+  padding-top: 10px;
   h1 {
-    font-size: 25px;
-    font-weight: bold;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    span.title {
+      font-size: 35px;
+      font-weight: bold;
+      display:block;
+      }
+    span.subtitle {
+      font-size: 15px;
+      display:block;
+      }
+    
     }
   
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   
   ul#nav {
-  
+    margin-left: 5px;
     li {
       float: left;
       margin-right: 0.5em;
+      background: black;
+      @include border-radius(5px, 5px, 0, 0);
+      
+      
+      a { 
+        display: block;
+        padding: 5px 15px;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        &:hover {
+          color: #CCC;
+          }
+        } 
+      
       }
   
     }

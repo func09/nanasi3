@@ -107,13 +107,44 @@ input, button, textarea, select {
   color: #514721; }
 
 #header {
-  margin-bottom: 10px; }
+  padding-top: 10px; }
   #header h1 {
-    font-size: 25px;
-    font-weight: bold; }
-  #header ul#nav li {
-    float: left;
-    margin-right: 0.5em; }
+    margin-left: 20px;
+    margin-bottom: 10px; }
+    #header h1 span.title {
+      font-size: 35px;
+      font-weight: bold;
+      display: block; }
+    #header h1 span.subtitle {
+      font-size: 15px;
+      display: block; }
+  #header ul#nav {
+    margin-left: 5px; }
+    #header ul#nav li {
+      float: left;
+      margin-right: 0.5em;
+      background: black;
+      -webkit-border-top-left-radius: 5px;
+      -webkit-border-top-right-radius: 5px;
+      -webkit-border-bottom-right-radius: 0;
+      -webkit-border-bottom-left-radius: 0;
+      -moz-border-radius-topleft: 5px;
+      -moz-border-radius-topright: 5px;
+      -moz-border-radius-bottomright: 0;
+      -moz-border-radius-bottomleft: 0;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0; }
+      #header ul#nav li a {
+        display: block;
+        padding: 5px 15px;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none; }
+        #header ul#nav li a:hover {
+          color: #CCC; }
 
 #side h3, #side h4 {
   margin-bottom: 0.5em;
@@ -131,18 +162,18 @@ input, button, textarea, select {
 #side .box {
   padding: 8px;
   border: 1px solid #AAA;
-  -webkit-border-top-left-radius: 3px;
-  -webkit-border-top-right-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-topright: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   background: white; }
 
 #status-update-box .count.positive {
@@ -219,7 +250,8 @@ input, button, textarea, select {
 #status-list-box .statuses li.status.mine {
   background: #f1fcfd; }
 #status-list-box .ad {
-  margin-top: 10px; }
+  margin-top: 10px;
+  background: white; }
 #status-list-box #pagination {
   margin-top: .8em; }
   #status-list-box #pagination a#more {

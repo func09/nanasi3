@@ -24,7 +24,7 @@
   .box {
     padding: 8px;
     border: 1px solid #AAA;
-    @include border-radius(3px,3px,3px,3px);
+    @include border-radius(5px,5px,5px,5px);
     background: white;
     }
   .ad {
