@@ -4,6 +4,7 @@
 
 #status-list-box
   %h2 あなたの匿名つぶやきタイムライン
+  = will_paginate(@statuses, :prev_label => '&lt;', :next_label => '&gt;')
   %ol(id='timeline' class='statuses')
     = render :partial => 'timeline', :locals => {:statuses => @statuses}
   .ad
@@ -13,31 +14,31 @@
       google_ad_width = 550;
       google_ad_height = 15;
     = javascript_include_tag 'http://pagead2.googlesyndication.com/pagead/show_ads.js'
-  #pagination
-    = render :partial => 'more', :locals => {:next_page => @statuses.next_page}
+  = will_paginate(@statuses, :prev_label => '&lt;', :next_label => '&gt;')
+  =# render :partial => 'more', :locals => {:next_page => @statuses.next_page}
 
-    :javascript
+:javascript
 
-      $(function(){
+  $(function(){
 
-        $('#status_text').NobleCount('#status-update-box .count', {
-          max_chars: 140 - $('#status_tweet_extention').val().length,
-          block_negative: true,
-          on_negative: 'negative',
-          on_positive: 'positive'
-        });
+    $('#status_text').NobleCount('#status-update-box .count', {
+      max_chars: 140 - $('#status_tweet_extention').val().length,
+      block_negative: true,
+      on_negative: 'negative',
+      on_positive: 'positive'
+    });
 
-        $('#more').live('click', function(event){
-          event.preventDefault();
-          $.get('#{timeline_my_statuses_path}', {page:$(this).attr('next')}, function(data){
-            var pagination = data['pagination'];
-            var timeline = data['timeline'];
-            $('#pagination').html(pagination);
-            $('#timeline').append(timeline);
-          });
-        });
-
-        $('.status-content a').oembed(null, { maxWidth: 240, maxHeight: 180});
-
+    $('#more').live('click', function(event){
+      event.preventDefault();
+      $.get('#{timeline_my_statuses_path}', {page:$(this).attr('next')}, function(data){
+        var pagination = data['pagination'];
+        var timeline = data['timeline'];
+        $('#pagination').html(pagination);
+        $('#timeline').append(timeline);
       });
+    });
+
+    $('.status-content a').oembed(null, { maxWidth: 240, maxHeight: 180});
+
+  });
 

@@ -281,6 +281,10 @@ input, button, textarea, select {
 #status-list-box .ad {
   margin-top: 10px;
   background: white; }
+#status-list-box .pagination {
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 12px; }
 #status-list-box #pagination {
   margin-top: .8em; }
   #status-list-box #pagination a#more {
