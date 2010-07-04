@@ -20,17 +20,54 @@
     
 .entry-content
   .status-content
+    .text-content
+      = auto_link(h(@status.text))
+  .status-meta
+    = "#{distance_of_time_in_words_to_now(@status.created_at)}前"
+    %span.twitter
+      = link_to("twitter", tweet_url(@status))
+    %span.signature
+      = "ID:#{@status.signature}" unless @status.signature.blank?
+  .user-info.clearfix
+    %span.user-icon= image_tag app_user.profile_image_url
+    %span.user-login= "@#{app_user.login}"
+    %span.user-name= link_to app_user.name, "http://twitter.com/#{app_user.login}"
+  = render :partial => 'timeline_ad'
+  .status-reaction
+    %h3 このつぶやきに対する反応
     .topsy
       %script(type="text/javascript" src="http://cdn.topsy.com/button.js")
-    .text-content
-      =h @status.text
-    .meta
-      = @status.created_at
-  .user-info
-    = image_tag app_user.profile_image_url
-    = app_user.login
-    = app_user.name
-%div
-  %h3 このつぶやきに対する反応
-  .trackbacks
-    loading..
+    .trackbacks
+      loading..
+  .status-list
+    %script(src="http://widgets.twimg.com/j/2/widget.js")
+    :javascript
+      new TWTR.Widget({
+        version: 2,
+        type: 'profile',
+        rpp: 7,
+        interval: 6000,
+        width: 'auto',
+        height: 300,
+        theme: {
+          shell: {
+            background: '#bbbbbb',
+            color: '#616161'
+          },
+          tweets: {
+            background: '#e6e6e6',
+            color: '#595959',
+            links: '#005eff'
+          }
+        },
+        features: {
+          scrollbar: true,
+          loop: false,
+          live: true,
+          hashtags: true,
+          timestamp: true,
+          avatars: true,
+          behavior: 'all'
+        }
+      }).render().setUser('#{app_user.login}').start();
+  

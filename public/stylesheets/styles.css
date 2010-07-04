@@ -302,6 +302,33 @@ input, button, textarea, select {
     font-weight: bold;
     text-decoration: none; }
 
+.entry-content .status-content {
+  padding-bottom: 0.5em; }
+  .entry-content .status-content .text-content {
+    font-size: 2em; }
+.entry-content .status-meta {
+  font-size: 12px;
+  color: #CCC;
+  border-bottom: 1px solid #EEE;
+  padding: 0.5em 0; }
+.entry-content .ad {
+  padding: 0.5em 0; }
+.entry-content .user-info {
+  border-bottom: 1px solid #EEE;
+  padding: 0.5em 0;
+  padding-bottom: 0.25em; }
+  .entry-content .user-info .user-icon {
+    float: left;
+    display: block;
+    margin-right: 10px; }
+  .entry-content .user-info .user-login {
+    display: block; }
+  .entry-content .user-info .user-name {
+    display: block; }
+.entry-content .status-reaction h3 {
+  font-weight: bold;
+  font-size: 1em; }
+
 body {
   background: #EEE; }
 

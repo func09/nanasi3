@@ -123,3 +123,45 @@
       }
     
   }
+
+.entry-content {
+  .status-content {
+    padding-bottom: 0.5em;
+    .text-content {
+      font-size: 2em;
+      }
+    }
+  .status-meta {
+    font-size: 12px;
+    color: #CCC;
+    border-bottom: 1px solid #EEE;
+    // margin-bottom: 1em;
+    padding: 0.5em 0;
+    }
+  .ad {
+    padding: 0.5em 0;
+    }
+  .user-info {
+    border-bottom: 1px solid #EEE;
+    padding: 0.5em 0;
+    padding-bottom: 0.25em;
+    .user-icon {
+      float: left;
+      display: block;
+      margin-right: 10px;
+      }
+    .user-login {
+      display: block;
+      }
+    .user-name {
+      display: block;
+      }
+    }
+  .status-reaction {
+    h3 {
+      font-weight: bold;
+      font-size: 1em;
+      }
+    }
+  }
+    
