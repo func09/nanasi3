@@ -5,15 +5,10 @@
 #status-list-box
   %h2 あなたの匿名つぶやきタイムライン
   = will_paginate(@statuses, :prev_label => '&lt;', :next_label => '&gt;')
+  = render :partial => 'timeline_ad'
   %ol(id='timeline' class='statuses')
     = render :partial => 'timeline', :locals => {:statuses => @statuses}
-  .ad
-    :javascript
-      google_ad_client = "pub-7941320190288826";
-      google_ad_slot = "9697936443";
-      google_ad_width = 550;
-      google_ad_height = 15;
-    = javascript_include_tag 'http://pagead2.googlesyndication.com/pagead/show_ads.js'
+  = render :partial => 'timeline_ad'
   = will_paginate(@statuses, :prev_label => '&lt;', :next_label => '&gt;')
   =# render :partial => 'more', :locals => {:next_page => @statuses.next_page}
 
