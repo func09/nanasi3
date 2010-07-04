@@ -5,10 +5,13 @@
 #status-list-box
   %h2 あなたの匿名つぶやきタイムライン
   = will_paginate(@statuses, :prev_label => '&lt;', :next_label => '&gt;')
-  = render :partial => 'timeline_ad'
-  %ol(id='timeline' class='statuses')
-    = render :partial => 'timeline', :locals => {:statuses => @statuses}
-  = render :partial => 'timeline_ad'
+  = render :partial => '/statuses/timeline_ad'
+  - unless @statuses.empty?
+    %ol(id='timeline' class='statuses')
+      = render :partial => 'timeline', :locals => {:statuses => @statuses}
+  - else
+    .empty あなたの匿名つぶやきはまだありません
+  = render :partial => '/statuses/timeline_ad'
   = will_paginate(@statuses, :prev_label => '&lt;', :next_label => '&gt;')
   =# render :partial => 'more', :locals => {:next_page => @statuses.next_page}
 

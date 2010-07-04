@@ -243,6 +243,9 @@ input, button, textarea, select {
   color: red;
   font-weight: bold;
   font-size: 20px; }
+#status-list-box .empty {
+  padding: 2em 0;
+  font-size: 1.2em; }
 #status-list-box .statuses li.status {
   position: relative;
   padding: 10px 0;
