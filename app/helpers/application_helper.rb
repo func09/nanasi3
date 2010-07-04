@@ -12,4 +12,8 @@ module ApplicationHelper
     "http://twitter.com/#{app_user.login}/statuses/#{status.tweet_id}"
   end
   
+  def page_class_name(page_class_name)
+    @content_for_page_class_name = page_class_name.to_s
+  end
+  
 end

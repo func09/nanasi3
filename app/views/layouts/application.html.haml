@@ -10,7 +10,7 @@
     = javascript_include_tag 'jquery.NobleCount.min.js'
     = stylesheet_link_tag 'styles'
     = yield(:head)
-  %body(class="#{controller_name}-#{action_name}")
+  %body(class="#{yield(:page_class_name)}")
     #container
       
       #header
@@ -18,12 +18,12 @@
           %img(src="/images/site_title.png")
         #navSection.clearfix
           %ul#nav
-            %li= link_to 'ホーム', '/'
+            %li.home= link_to 'ホーム', '/'
             - if logged_in?
-              %li= link_to 'あなたの匿名つぶやき', my_root_path
-              %li= link_to 'ログアウト', logout_path
+              %li.my= link_to 'あなたの匿名つぶやき', my_root_path
+              %li.logout= link_to 'ログアウト', logout_path
             - else
-              %li= link_to 'ログイン', login_path
+              %li.login= link_to 'ログイン', login_path
         
       #main.clearfix
         #content

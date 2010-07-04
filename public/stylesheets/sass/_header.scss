@@ -1,3 +1,9 @@
+.status-index #header ul#nav li.home,
+.my-status-index #header ul#nav li.my {
+  background: #FFF;
+  a { color: #444; }
+}
+
 #header {
   padding-top: 10px;
   h1 {
@@ -30,7 +36,9 @@
       background: #444;
       @include border-radius(5px, 5px, 0, 0);
       
-      
+      &.login, &.logout {
+        float: right;
+      }
       a { 
         display: block;
         padding: 5px 15px;
@@ -44,7 +52,6 @@
         } 
       
       }
-  
     }
   
   }

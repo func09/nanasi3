@@ -106,6 +106,13 @@ input, button, textarea, select {
   border-color: #FFD324;
   color: #514721; }
 
+.status-index #header ul#nav li.home,
+.my-status-index #header ul#nav li.my {
+  background: #FFF; }
+  .status-index #header ul#nav li.home a,
+  .my-status-index #header ul#nav li.my a {
+    color: #444; }
+
 #header {
   padding-top: 10px; }
   #header h1 {
@@ -148,6 +155,8 @@ input, button, textarea, select {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
+    #header ul#nav li.login, #header ul#nav li.logout {
+      float: right; }
     #header ul#nav li a {
       display: block;
       padding: 5px 15px;
