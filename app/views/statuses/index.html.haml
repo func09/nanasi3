@@ -41,7 +41,7 @@
     $('a.anonymous_reply').click(function(e){
       event.preventDefault();
       var parent = $(this).parents('li.status');
-      var text = parent.find('.text').html().replace(/^\s+/,'').replace(/\s+$/,'');
+      var text = parent.find('.text').text().replace(/^\s+/,'').replace(/\s+$/,'');
       text = "QT @nanasi_3 : " + text;
       $('#status_text').val(text);
       $('html, body').animate({scrollTop: $("#container").offset().top}, 250);
