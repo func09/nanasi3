@@ -4,7 +4,7 @@ class Status < ActiveRecord::Base
   validates_uniqueness_of :uuid
   validates_presence_of :text
   validates_length_of :text, :maximum => 140
-  attr_accessor :tweet_extention
+  attr_accessor :tweet_extention, :in_reply_to_status_id
   
   default_value_for :uuid do
     Forgery::Basic.text :at_least => 6, :at_most => 6
@@ -20,7 +20,7 @@ class Status < ActiveRecord::Base
     def tweet
       # message = self.text + self.tweet_extention
       message = self.text
-      res = User.app_user.twitter.post('/statuses/update.json', 'status' => message) 
+      res = User.app_user.twitter.post('/statuses/update.json', 'status' => message, 'in_reply_to_status_id' => self.in_reply_to_status_id) 
       self.tweet_id = res['id']
     end
     

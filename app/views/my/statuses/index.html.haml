@@ -27,17 +27,26 @@
       on_positive: 'positive'
     });
 
-    $('#more').live('click', function(event){
-      event.preventDefault();
-      $.get('#{timeline_my_statuses_path}', {page:$(this).attr('next')}, function(data){
-        var pagination = data['pagination'];
-        var timeline = data['timeline'];
-        $('#pagination').html(pagination);
-        $('#timeline').append(timeline);
-      });
-    });
-
     $('.status-content a').oembed(null, { maxWidth: 240, maxHeight: 180});
+    
+    $('a.anonymous_reply').click(function(event){
+      event.preventDefault();
+      var parent = $(this).parents('li.status');
+      var text = parent.find('.text').text().replace(/^\s+/,'').replace(/\s+$/,'');
+      text = "QT @#{app_user.login} : " + text;
+      // in_reply_to_status_id
+      var tweet_id = parent.attr('data-tweet-id');
+      $('#status_in_reply_to_status_id').val(tweet_id);
+      $('#status_text').val(text);
+      // scroll to top
+      $('html, body').animate({scrollTop: $("#container").offset().top}, 250);
+    });
+    
+    $('#status_text').keyup(function(event){
+      if ($('#status_in_reply_to_status_id').val() && $(this).val() == "") {
+        $('#status_in_reply_to_status_id').val('');
+      }
+    });
 
   });
 
