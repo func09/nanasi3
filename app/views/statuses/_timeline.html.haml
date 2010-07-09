@@ -8,6 +8,10 @@
       %div.text
         = auto_link(h(status.text))
       .status-meta
+        %span
+          %a.anonymous_reply(href='#')
+            匿名でリプライ
+        %span &nbsp;
         = link_to("#{distance_of_time_in_words_to_now(status.created_at)}前", uuid_status_path(status.uuid))
         %span.twitter
           = link_to("twitter", tweet_url(status))
