@@ -10,13 +10,16 @@ class Status < ActiveRecord::Base
     Forgery::Basic.text :at_least => 6, :at_most => 6
   end
   
-  default_value_for :tweet_extention, " #{APP_CONFIG[:twitter]['hashtag']}"  
+  default_value_for :tweet_extention, " #{APP_CONFIG[:twitter]['hashtag']}"
+  default_value_for :text, " #{APP_CONFIG[:twitter]['hashtag']}"
+  
   before_destroy :remove_tweet
   private
     
     # 保存時にツイッターにつぶやきます
     def tweet
-      message = self.text + self.tweet_extention
+      # message = self.text + self.tweet_extention
+      message = self.text
       res = User.app_user.twitter.post('/statuses/update.json', 'status' => message) 
       self.tweet_id = res['id']
     end

@@ -20,7 +20,7 @@
     $('#status-list-box li[data-sig="#{signature}"]').addClass('mine');
     
     $('#status_text').NobleCount('#status-update-box .count', {
-      max_chars: 140 - $('#status_tweet_extention').val().length,
+      max_chars: 140,
       block_negative: true,
       on_negative: 'negative',
       on_positive: 'positive'
