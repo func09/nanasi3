@@ -2,7 +2,7 @@
 worker_processes 2
 
 # for Cap
-working_directory '/home/app/deploy/nanasi3'
+working_directory '/home/app/deploy/nanasi3/current'
 
 # Socket
 listen '/tmp/unicorn_of_nanasi3.sock'
