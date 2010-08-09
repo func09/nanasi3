@@ -13,7 +13,7 @@ role :web, "nanasi3.com"                          # Your HTTP server, Apache/etc
 role :app, "nanasi3.com"                          # This may be the same as your `Web` server
 role :db,  "nanasi3.com", :primary => true # This is where Rails migrations will run
 
-set :unicorn_binary, "/usr/bin/unicorn"
+set :unicorn_binary, "/usr/bin/unicorn_rails"
 set :unicorn_config, "#{current_path}/config/unicorn.rb"
 set :unicorn_pid, "#{current_path}/tmp/pids/unicorn.pid"
 
@@ -34,5 +34,9 @@ namespace :deploy do
     stop
     start
   end
+end
+
+after 'deploy:finalize_update' do
+  run "cd #{latest_release} && bundle install #{shared_path}/vendor --without development,test && bundle lock"
 end
 
